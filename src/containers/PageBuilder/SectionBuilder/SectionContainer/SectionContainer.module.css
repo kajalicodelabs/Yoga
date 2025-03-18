@@ -149,16 +149,15 @@
 
 .mediationSection {
   padding: 50px 24px;
-  /* position: relative; */
-  position: absolute;
+  /* position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  background: #00000030;
-  max-width: 1440px;
+  background: #00000030; */
+  max-width: 1320px;
   width: 100%;
   margin-inline: auto;
-  padding: 0px !important;
+  padding: 60px 0px;
 
   @media(max-width: 1320px) {
     padding: 50px 48px 40px 48px !important;
@@ -252,7 +251,7 @@
     /* padding: 0px 32px; */
     margin-bottom: 60px;
 
-    h2 {
+    & h2 {
       font-family: "DM Serif Display", serif;
       font-weight: 400;
       font-size: 60px;
@@ -273,7 +272,7 @@
       }
     }
 
-    p {
+    & p {
       font-family: "Poppins", serif;
       font-weight: 400;
       font-size: 18px;
@@ -304,7 +303,7 @@
     }
   }
 
-  h3 {
+  & h3 {
     font-family: "Poppins", serif;
     font-weight: 600;
     font-size: 18px;
@@ -352,7 +351,7 @@
   & header {
     padding: 0px;
 
-    p {
+    & p {
       font-family: "DM Serif Display", serif;
       font-weight: 400;
       font-size: 60px;
@@ -380,13 +379,15 @@
 }
 
 :global(#yoga-classes) {
-  padding: 50px 0 50px 100px;
+  /* padding: 50px 0 50px 100px;
   justify-content: unset;
   max-width: 1320px;
   width: 100%;
-  margin-inline: auto;
+  margin-inline: auto; */
+  min-height: 400px;
 
   &>div {
+  
     /* background-color: red; */
   }
 
@@ -394,10 +395,11 @@
     padding: 50px 32px;
   }
 
+
   & img {
     width: 100%;
     object-fit: cover;
-    height: 440px;
+    height: 400px;
 
     @media (max-width: 768px) {
       /* height: 340px; */
@@ -406,6 +408,10 @@
 
   & header {
     padding: 0px;
+    max-width: 1320px;
+    width: 100%;
+    margin-inline: unset;
+    /* justify-content: unset; */
 
     & h2 {
       justify-self: unset;
@@ -466,42 +472,27 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-    }
 
-    & a::after {
-      content: '';
-      display: block;
-      background-image: url('file:///home/pro/Downloads/Frame%20(5).png');
-      width: 30px;
-      height: 30px;
-      position: relative;
-      bottom: 0;
-    }
+      &::after {
+        content: '';
+        display: block;
+        background-image: url('file:///home/pro/Downloads/Frame%20(5).png');
+        width: 30px;
+        height: 30px;
+        position: relative;
+        bottom: 0;
 
-    @media (max-width: 768px) {
-      & a {
-        font-size: 18px;
-        padding: 6px 20px;
-        /* height: 45px; */
-      }
+        @media (max-width: 768px) {
+          font-size: 18px;
+          padding: 6px 20px;
+          /* width: 27px;
+          height: 27px; */
+        }
 
-      & a::after {
-        width: 27px;
-        height: 27px;
+        @media (max-width: 500px) {
+          font-size: 16px;
+        }
       }
     }
-
-    @media (max-width: 500px) {
-      & a {
-        font-size: 16px;
-        /* height: 44px; */
-      }
-
-      & a::after {
-        width: 27px;
-        height: 27px;
-      }
-    }
-
   }
 }

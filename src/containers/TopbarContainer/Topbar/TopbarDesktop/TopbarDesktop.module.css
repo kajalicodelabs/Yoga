@@ -11,24 +11,37 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0 12px 0 0;
-
+  /* padding: 0 12px 0 0; */
+  max-width: 1440px;
+  width: 100%;
+  margin-inline: auto;
   /* fill */
-  background-color: var(--colorWhite);
+  background-color: transparent;
 
   /* shadows */
-  box-shadow: var(--boxShadowLight);
-
+  /* box-shadow: var(--boxShadowLight); */
+  border-bottom: 1px solid #fff;
+  /* 
   @media (--viewportLarge) {
     padding: 0 24px 0 0;
-  }
+  } */
 }
+
+/* 
+nav.scrolled {
+  background-color: red;
+} */
+
+
+
 
 /* logo */
 .logoLink {
   border-bottom: 0px solid;
   transition: var(--transitionStyleButton);
+  padding: 0px;
 }
+
 .logoLink:hover {
   border-bottom: 4px solid var(--marketplaceColor);
   border-radius: 0;
@@ -85,24 +98,25 @@
 
 /* These is used with Inbox, Sign up, and Log in */
 .topbarLink {
+  font-family: "Poppins", serif;
+  /* font-weight: 400; */
+  font-size: 20px;
+  /* line-height: 30px; */
   flex-shrink: 0;
-
   border-bottom: 0px solid;
   transition: var(--transitionStyleButton);
-
-  font-weight: var(--fontWeightMedium);
-  font-size: 14px;
-  line-height: 18px;
+  font-weight: var(--fontWeightRegular);
+  /* font-size: 14px;
+  line-height: 18px; */
   letter-spacing: 0;
   color: var(--colorGrey700);
-
   height: 100%;
   padding: 0 12px 0 12px;
   margin: 0;
 
   &:hover {
-    color: var(--colorBlack);
-    border-bottom: 4px solid var(--marketplaceColor);
+    /* color: var(--colorBlack);
+    border-bottom: 4px solid var(--marketplaceColor); */
     border-radius: 0;
     text-decoration: none;
   }
@@ -119,6 +133,7 @@
   margin: 28px 0;
   text-decoration: inherit;
   position: relative;
+  /* box-shadow: var(--boxShadowLight) !important; */
 }
 
 .notificationDot {
@@ -150,6 +165,7 @@
     transform: scale(0);
     opacity: 0;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;

@@ -145,8 +145,16 @@ const TopbarDesktop = props => {
   } = props;
   const [mounted, setMounted] = useState(false);
 
+  // const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     setMounted(true);
+    // const handleScroll = () => {
+    //   setScrolled(window.scrollY > 50); // Change when scrolled 50px
+    // };
+
+    // window.addEventListener("scroll", handleScroll);
+    // return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const marketplaceName = config.marketplaceName;
@@ -194,19 +202,22 @@ const TopbarDesktop = props => {
         alt={intl.formatMessage({ id: 'TopbarDesktop.logo' }, { marketplaceName })}
         linkToExternalSite={config?.topbar?.logoLink}
       />
-      {searchFormMaybe}
+      {/* {searchFormMaybe} */}
 
-      <CustomLinksMenu
+      {/* <CustomLinksMenu
         currentPage={currentPage}
         customLinks={customLinks}
         intl={intl}
         hasClientSideContentReady={authenticatedOnClientSide || !isAuthenticatedOrJustHydrated}
-      />
+      /> */}
 
-      {inboxLinkMaybe}
-      {profileMenuMaybe}
-      {signupLinkMaybe}
-      {loginLinkMaybe}
+      {/* {inboxLinkMaybe} */}
+      {/* {profileMenuMaybe} */}
+
+      <div>
+        {signupLinkMaybe}
+        {loginLinkMaybe}
+      </div>
     </nav>
   );
 };

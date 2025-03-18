@@ -77,6 +77,7 @@ const SectionColumns = props => {
     options,
   } = props;
 
+  console.log();
   // If external mapping has been included for fields
   // E.g. { h1: { component: MyAwesomeHeader } }
   const fieldComponents = options?.fieldComponents;
@@ -95,6 +96,12 @@ const SectionColumns = props => {
     >
       {hasHeaderFields ? (
         <header className={defaultClasses.sectionDetails}>
+          {sectionId === 'instructor-section' && (
+            <div className={css.instructorContainer}>
+              <h1>Your Journey to Mastery Begins Here.</h1>
+            </div>
+          )}
+
           <Field data={title} className={defaultClasses.title} options={fieldOptions} />
           <Field data={description} className={defaultClasses.description} options={fieldOptions} />
           <Field data={callToAction} className={defaultClasses.ctaButton} options={fieldOptions} />

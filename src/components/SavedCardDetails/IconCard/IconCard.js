@@ -10,6 +10,9 @@ const BRAND_JCB = 'jcb';
 const BRAND_MASTERCARD = 'mastercard';
 const BRAND_UNIONPAY = 'unionpay';
 const BRAND_VISA = 'visa';
+const RIGHTARROW = 'rightarrow';
+const PLUS_ICON = 'plusicon';
+const MINUS_ICON = 'minusicon';
 
 /**
  * Payment card icon.
@@ -26,6 +29,75 @@ const IconCard = props => {
   const classes = classNames(rootClassName || css.root, className);
 
   switch (brand) {
+    case MINUS_ICON:
+      return (
+        <svg
+          className={classes}
+          width="30"
+          height="30"
+          viewBox="0 0 30 30"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_74_3702)">
+            <path
+              d="M0 15C0 6.72867 6.72867 0 15 0C23.2713 0 30 6.72867 30 15C30 23.2713 23.2713 30 15 30C6.72867 30 0 23.2713 0 15Z"
+              fill="#388D86"
+            />
+            <path
+              d="M16.2799 16.4998H21.7201C22.4267 16.4998 23 15.94 23 15.2499C23 14.5599 22.4267 14 21.7201 14H16.2799H13.7201H8.27993C7.57331 14 7 14.5599 7 15.2499C7 15.94 7.57331 16.4998 8.27993 16.4998H13.7201H16.2799Z"
+              fill="white"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_74_3702">
+              <rect width="30" height="30" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      );
+    case PLUS_ICON:
+      return (
+        <svg
+          className={classes}
+          width="30"
+          height="30"
+          viewBox="0 0 30 30"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_74_3708)">
+            <path
+              d="M0 15C0 6.72867 6.72867 0 15 0C23.2713 0 30 6.72867 30 15C30 23.2713 23.2713 30 15 30C6.72867 30 0 23.2713 0 15Z"
+              fill="#388D86"
+            />
+            <path
+              d="M21.7201 16.2799H16.2799V21.7201C16.2799 22.4267 15.7066 23 15 23C14.2934 23 13.7201 22.4267 13.7201 21.7201V16.2799H8.27993C7.57331 16.2799 7 15.7066 7 15C7 14.2934 7.57331 13.7201 8.27993 13.7201H13.7201V8.27993C13.7201 7.57331 14.2934 7 15 7C15.7066 7 16.2799 7.57331 16.2799 8.27993V13.7201H21.7201C22.4267 13.7201 23 14.2934 23 15C23 15.7066 22.4267 16.2799 21.7201 16.2799Z"
+              fill="white"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_74_3708">
+              <rect width="30" height="30" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      );
+    case RIGHTARROW:
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 0.224976C6.52023 0.224976 1.63143 4.16368 0.485128 9.52707C-0.087572 12.207 0.298228 15.0567 1.57593 17.4816C2.80563 19.8153 4.82163 21.7014 7.23363 22.7703C9.74253 23.8824 12.6228 24.0762 15.2598 23.3178C17.8038 22.5864 20.0595 20.9811 21.5952 18.8262C24.8061 14.3211 24.3768 7.99288 20.5992 3.95608C18.3852 1.59028 15.2406 0.224976 12 0.224976ZM17.6487 12.6291L14.4387 15.9165C13.626 16.749 12.3414 15.4878 13.1508 14.6592L14.7705 13.0005H7.09473C6.54963 13.0005 6.09483 12.5454 6.09483 12.0006C6.09483 11.4558 6.54993 11.0007 7.09473 11.0007H14.7321L13.0803 9.34918C12.2595 8.52838 13.5321 7.25548 14.3529 8.07628L17.6412 11.3643C17.8087 11.5317 17.9035 11.7583 17.9049 11.9951C17.9063 12.2319 17.8142 12.4597 17.6487 12.6291Z"
+            fill="white"
+          />
+        </svg>
+      );
     case BRAND_AMEX:
       return (
         <svg

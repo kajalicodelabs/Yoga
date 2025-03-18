@@ -89,7 +89,7 @@
    * Note: changing --contentMaxWidth does not affect layouts with LayoutSideNavigation or search pages.
    */
   --contentMaxWidth: 1056px;
-  --contentMaxWidthPages: 1120px; /* calc(Global width (1056px) + (Horizontal padding (32px) * 2) */
+  --contentMaxWidthPages: 1320px; /* calc(Global width (1056px) + (Horizontal padding (32px) * 2) */
 
   /* Multiples of mobile and desktop spacing units should be used with margins and paddings. */
   --spacingUnit: 6px;
@@ -112,7 +112,7 @@
   /* ================ Z-index base levels ================ */
 
   /* topbar is positioned slightly above content */
-  --zIndexTopbar: 10;
+  --zIndexTopbar: 99;
   /* small popups on UI should use z-indexes above 50 */
   --zIndexPopup: 50;
   /* modals and UI overlays should use z-indexes above 100 */

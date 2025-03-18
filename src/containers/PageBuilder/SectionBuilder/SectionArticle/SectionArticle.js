@@ -6,7 +6,9 @@ import BlockBuilder from '../../BlockBuilder';
 
 import SectionContainer from '../SectionContainer';
 import css from './SectionArticle.module.css';
-
+import IconCard from '../../../../components/SavedCardDetails/IconCard/IconCard';
+import MeditationSlider from '../../../../components/meditationSlider/meditationSlider';
+import Meditation from '../../../../components/MeditationContainer/Meditation';
 /**
  * @typedef {Object} BlockConfig
  * @property {string} blockId
@@ -80,15 +82,42 @@ const SectionArticle = props => {
         <header className={defaultClasses.sectionDetails}>
           <Field data={title} className={defaultClasses.title} options={fieldOptions} />
           <Field data={description} className={defaultClasses.description} options={fieldOptions} />
-          <Field data={callToAction} className={defaultClasses.ctaButton} options={fieldOptions} />
+          {sectionId === 'meditation-section' ? (
+            <button className={css.doingTodayButton}>
+              Start Doing Today
+              <IconCard brand="rightarrow" />
+            </button>
+          ) : (
+            <Field
+              data={callToAction}
+              className={defaultClasses.ctaButton}
+              options={fieldOptions}
+            />
+          )}
         </header>
       ) : null}
       {hasBlocks ? (
         <div
-          className={classNames(defaultClasses.blockContainer, css.articleMain, {
-            [css.noSidePaddings]: isInsideContainer,
-          })}
+          className={classNames(
+            sectionId === 'meditation-section'
+              ? css.meditationContainer
+              : sectionId === 'slick-slider'
+              ? css.testimonialsContainer
+              : defaultClasses.blockContainer,
+            css.articleMain,
+            {
+              [css.noSidePaddings]: isInsideContainer,
+            }
+          )}
         >
+          {sectionId === 'meditation-section' && (
+          <div className={css.outerMediationWrapper}>
+          <Meditation />
+          <div className={css.sliderContainer}>
+            <MeditationSlider />
+          </div>
+        </div>
+          )}
           <BlockBuilder
             blocks={blocks}
             sectionId={sectionId}

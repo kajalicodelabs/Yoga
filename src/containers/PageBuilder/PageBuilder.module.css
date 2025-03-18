@@ -1,16 +1,19 @@
 .layout {
   min-height: 100vh;
+  display: block !important; 
   grid-template-rows: auto 1fr auto;
 }
 
 .topbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: var(--zIndexTopbar);
+  background-color: white;
 }
 
 .main {
-  display: grid;
+  display: block;
 }
 
 .loading {

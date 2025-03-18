@@ -3,8 +3,11 @@ import classNames from 'classnames';
 
 import Field, { hasDataInFields } from '../../Field';
 import BlockContainer from '../BlockContainer';
-
+import { CiCirclePlus } from 'react-icons/ci';
 import css from './BlockDefault.module.css';
+import FAQSection from './FAQSection';
+import SlickSlider from '../../../../components/SlickSlider/slickSlider';
+import IconCard from '../../../../components/SavedCardDetails/IconCard/IconCard';
 
 const FieldMedia = props => {
   const { className, media, sizes, options } = props;
@@ -60,6 +63,7 @@ const BlockDefault = props => {
     options,
     alignment,
   } = props;
+  console.log(blockId, 'blockId');
   const classes = classNames(rootClassName || css.root, className);
   const hasTextComponentFields = hasDataInFields([title, text, callToAction], options);
 
@@ -79,13 +83,46 @@ const BlockDefault = props => {
         className={mediaClassName}
         options={options}
       />
-      {hasTextComponentFields ? (
-        <div className={classNames(textClassName, alignmentClass, css.text)}>
-          <Field data={title} options={options} />
-          <Field data={text} options={options} />
-          <Field data={callToAction} className={ctaButtonClass} options={options} />
+
+      {blockId === 'faq-left-section' ? (
+        <div className={css.joinBackground}>
+          <h1 className={css.leftHeading}>Need any help? Don’t hesitate to join us</h1>
+          <button className={css.getButton}>
+            Get In touch
+            <IconCard brand="rightarrow" />
+          </button>
         </div>
-      ) : null}
+      ) : blockId === 'faq-right-section' ? (
+        <div>
+          <FAQSection />
+        </div>
+      ) : blockId === 'multi-image-slider' ? (
+        <div>
+          <SlickSlider />
+        </div>
+      ) : (
+        <>
+          {hasTextComponentFields ? (
+            <div
+              className={classNames(
+                blockId === 'hero-left'
+                  ? css.heroBlockLeft
+                  : blockId === 'journeyCard-section'
+                  ? css.journeyCard
+                  : blockId === 'instructor-card'
+                  ? css.instructorCard
+                  : textClassName,
+                alignmentClass,
+                css.text
+              )}
+            >
+              <Field data={title} options={options} />
+              <Field data={text} options={options} />
+              <Field data={callToAction} className={ctaButtonClass} options={options} />
+            </div>
+          ) : null}
+        </>
+      )}
     </BlockContainer>
   );
 };

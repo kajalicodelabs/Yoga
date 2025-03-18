@@ -334,7 +334,7 @@ const TopbarComponent = props => {
         usePortal
         onManageDisableScrolling={onManageDisableScrolling}
       >
-        <div className={css.searchContainer}>
+        {/* <div className={css.searchContainer}>
           <TopbarSearchForm
             onSubmit={handleSubmit}
             initialValues={initialSearchFormValues}
@@ -344,7 +344,7 @@ const TopbarComponent = props => {
           <p className={css.mobileHelp}>
             <FormattedMessage id="Topbar.mobileSearchHelp" />
           </p>
-        </div>
+        </div> */}
       </Modal>
       <ModalMissingInformation
         id="MissingInformationReminder"

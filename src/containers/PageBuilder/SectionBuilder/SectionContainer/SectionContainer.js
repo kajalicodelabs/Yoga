@@ -1,8 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-
 import Field from '../../Field';
-
 import css from './SectionContainer.module.css';
 
 /**
@@ -42,7 +40,29 @@ const SectionContainer = props => {
         />
       ) : null}
 
-      <div className={css.sectionContent}>{children}</div>
+      <div
+        className={
+          id === 'hero-section'
+            ? css.heroSection
+            : id === 'card-section'
+            ? css.cardsection
+            : id === 'meditation-section'
+            ? css.mediationSection
+            : id === 'instructor-section'
+            ? css.instructorSection
+            : id == 'faqs-section'
+            ? css.faqSection
+            : id == 'slick-slider'
+            ? css.sliderSection
+            : id == 'yoga-classes'
+            ? css.yogaSection
+            : id == 'footer-section'
+            ? css.footerSection
+            : css.sectionContent
+        }
+      >
+        {!id === 'slick-slider' ? <div></div> : children}
+      </div>
     </Tag>
   );
 };

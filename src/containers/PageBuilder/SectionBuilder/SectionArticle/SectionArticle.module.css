@@ -12,3 +12,181 @@
   padding-left: 0;
   padding-right: 0;
 }
+
+.doingTodayButton {
+  border-radius: 16px;
+  padding: 10px 20px;
+  color: #fff;
+  border: 1px solid #FFFFFF;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 20px 40px 0px #0000001A;
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+
+  @media (max-width: 576px) {
+    padding: 8px 14px;
+  }
+}
+
+.outerMediationWrapper {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}
+
+.meditationContainer {
+  max-width: 100%;
+  margin-top: 230px;
+  gap: unset;
+
+  @media (max-width: 1024px) {
+    margin-top: 170px;
+    padding: 0px;
+  }
+
+  & .meditationCardWrapper {
+    box-shadow: 0px 20px 40px 0px #0000001A;
+    backdrop-filter: blur(10px);
+    width: 370px;
+    height: 165px;
+    border-radius: 30px;
+    padding: 20px 22px;
+
+    @media (max-width: 500px) {
+      width: 300px;
+
+    }
+
+    & .meditationCard {
+      font-family: "Poppins", serif;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+
+      & img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+
+        @media (max-width: 500px) {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      & .mediationImg {
+        margin-left: -24px;
+      }
+
+      & .meditationRightCard {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 19px;
+      }
+
+      & .plusDescription {
+        font-family: "Poppins", serif;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 15px;
+        border-radius: 20px;
+        box-shadow: 0px 20px 40px 0px #0000001A;
+        backdrop-filter: blur(10px);
+        margin: 0px;
+        padding: 2.5px 10px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+      }
+    }
+
+    & .trustedDescription {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 15px;
+      text-decoration: underline;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    & .meditationHeading {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 15px;
+      margin: 0px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    & p {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 15px;
+      margin: 0px;
+    }
+  }
+
+  & .sliderWrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    backdrop-filter: blur(10px);
+    /* width: 375px !important; */
+    height: 120px;
+    border-radius: 20px;
+  }
+
+  & .sliderHeading {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0px;
+  }
+
+  & .sliderDescription {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    margin: 0px;
+  }
+}
+
+.sliderContainer {
+  width: 500px;
+
+  @media (max-width: 530px) {
+    width: 400px;
+  }
+
+  @media (max-width: 500px) {
+    width: 330px;
+  }
+}
+
+.testimonialsContainer {
+  max-width: 1320px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 0px;
+
+  @media(max-width: 1320px) {
+    padding: 50px 48px 40px 48px !important;
+  }
+
+  @media(max-width: 920px) {
+    padding: 50px 32px 30px 32px !important;
+  }
+
+  @media(max-width: 500px) {
+    padding: 50px 16px 20px 16px !important;
+  }
+}

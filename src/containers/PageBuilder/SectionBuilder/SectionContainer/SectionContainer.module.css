@@ -191,7 +191,7 @@
   margin-inline: auto;
   background-color: red; */
 
-  &>div {}
+
 
   & header {
     max-width: 100%;
@@ -385,11 +385,6 @@
   width: 100%;
   margin-inline: auto; */
   min-height: 400px;
-
-  &>div {
-  
-    /* background-color: red; */
-  }
 
   @media (max-width: 500px) {
     padding: 50px 32px;

@@ -1,4 +1,4 @@
-@import '../../../../styles/customMediaQueries.css';
+/* @import '../../../../styles/customMediaQueries.css'; */
 
 .root {
   background-size: cover;
@@ -471,7 +471,7 @@
     & a::after {
       content: '';
       display: block;
-      background-image: url('file:///home/pro/Downloads/Frame%20(5).png');
+      /* background-image: url('file:///home/pro/Downloads/Frame%20(5).png'); */
       width: 30px;
       height: 30px;
       position: relative;
@@ -502,6 +502,5 @@
         height: 27px;
       }
     }
-
   }
 }

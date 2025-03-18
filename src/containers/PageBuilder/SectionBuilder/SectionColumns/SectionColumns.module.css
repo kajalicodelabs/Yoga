@@ -38,7 +38,7 @@
 }
 
 .instructorContainer{
-  h1{
+  & h1{
     font-family:  "Poppins", serif;
     font-weight: 500;
     font-size: 18px;

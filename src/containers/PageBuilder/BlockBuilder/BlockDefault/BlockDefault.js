@@ -118,7 +118,7 @@ const BlockDefault = props => {
             >
               <Field data={title} options={options} />
               <Field data={text} options={options} />
-              <Field data={callToAction} className={ctaButtonClass} options={options} />
+              {/* <Field data={callToAction} className={ctaButtonClass} options={options} /> */}
             </div>
           ) : null}
         </>

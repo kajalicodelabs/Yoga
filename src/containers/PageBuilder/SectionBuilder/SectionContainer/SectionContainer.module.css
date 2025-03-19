@@ -92,7 +92,7 @@
     max-width: 1320px;
     margin-inline: auto;
     width: 100%;
-    padding: 64px 0px 0px 0px;
+    padding-top: 64px;
 
     @media(max-width: 1320px) {
       padding: 50px 48px 40px 48px !important;
@@ -471,7 +471,7 @@
       &::after {
         content: '';
         display: block;
-        background-image: url('file:///home/pro/Downloads/Frame%20(5).png');
+        /* background-image: url('file:///home/pro/Downloads/Frame%20(5).png'); */
         width: 30px;
         height: 30px;
         position: relative;

@@ -350,6 +350,7 @@
     &:last-child {
       position: absolute;
       bottom: 0;
+      overflow: hidden;
 
       & h3 {
         color: #fff;
@@ -425,7 +426,7 @@
     color: #fff;
   }
 
-  .getButton {
+  /* .getButton {
     background: #388D86;
     color: #fff;
     border-radius: 30px;
@@ -438,8 +439,63 @@
     right: 12px;
     font-size: 20px;
     font-weight: 400;
+  } */
+
+  .floatingWrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #fff;
+    padding-left: 0.75rem;
+    display: grid;
+    place-items: center;
+    border-top-left-radius: 26px;
+
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 2rem;
+      height: 24px;
+      top: -24px;
+      right: 0px;
+      border-bottom-right-radius: 76%;
+      box-shadow: 7px 5px 0 #fff;
+    }
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      left: -32px;
+      bottom: 0;
+      border-bottom-right-radius: 67%;
+      box-shadow: 10px 5px 0 #fff;
+    }
+
+    .getButton {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1.25rem;
+      color: white;
+      background-color: #14b8a6;
+      border-radius: 9999px;
+      border: 1px solid #d1d5db;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: #f3f4f6;
+        color: black;
+      }
+    }
   }
+
 }
+
 
 :global(#faqs-section) {
   position: relative;

@@ -72,7 +72,7 @@
 
     @media (max-width: 1024px) {
       font-size: 60px;
-      line-height: 68px;
+      line-height: 60px;
     }
 
     @media (max-width: 576px) {
@@ -202,7 +202,7 @@
   &::after {
     content: "";
     position: absolute;
-    background-image: url('data:image/svg+xml,%3Csvg%20width%3D%22890%22%20height%3D%221054%22%20viewBox%3D%220%200%20890%201054%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20filter%3D%22url%28%23filter0_f_28_37%29%22%3E%3Ccircle%20cx%3D%2233%22%20cy%3D%22197%22%20r%3D%22257%22%20fill%3D%22%23388D86%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_f_28_37%22%20x%3D%22-824%22%20y%3D%22-660%22%20width%3D%221714%22%20height%3D%221714%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22shape%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%22300%22%20result%3D%22effect1_foregroundBlur_28_37%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3C%2Fsvg%3E');
+    background-image: url('../../../../assets/heroBackground.svg');
     background-size: cover;
     background-repeat: no-repeat;
     top: -72px;
@@ -218,7 +218,7 @@
   &::after {
     content: "";
     position: absolute;
-    background-image: url('data:image/svg+xml,%3Csvg%20width%3D%22890%22%20height%3D%221714%22%20viewBox%3D%220%200%20890%201714%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20filter%3D%22url(%23filter0_f_28_38)%22%3E%3Ccircle%20cx%3D%22857%22%20cy%3D%22857%22%20r%3D%22257%22%20fill%3D%22%23388D86%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_f_28_38%22%20x%3D%220%22%20y%3D%220%22%20width%3D%221714%22%20height%3D%221714%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22shape%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%22300%22%20result%3D%22effect1_foregroundBlur_28_38%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3C%2Fsvg%3E');
+    background-image: url('../../../../assets/cardBackground.svg');
     background-size: cover;
     background-repeat: no-repeat;
     top: 0px;
@@ -296,6 +296,10 @@
   margin: 0px;
   padding: 30px;
 
+  @media (max-width: 768px) {
+    padding: 18px 15px;
+  }
+
   @media (max-width: 576px) {
     padding: 20px;
     border-radius: 0px 0px 15px 15px;
@@ -342,11 +346,21 @@
   background-image: url('../../../../assets/joinBackground.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: red;
-  /* border-radius: 30px 30px 440px 30px; */
+  /* background-color: rgb(90, 212, 90); */
+  overflow: hidden;
+  border-radius: 30px 30px 0px 30px;
+  background-position: bottom;
   /* border-radius: 30px; */
 
   &>div {
+    &>div {
+      &>div {
+        & img {
+          display: none;
+        }
+      }
+    }
+
     &:last-child {
       position: absolute;
       bottom: 0;
@@ -423,9 +437,122 @@
     font-size: 40px;
     line-height: 50px;
     color: #fff;
+    font-family: "DM Serif Display", serif;
+    padding: 0px 100px 24px 36px;
+
+    @media (max-width:1220px) {
+      padding: 0px 0px 60px 36px;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 35px;
+      line-height: 40px;
+      padding: 0px 20px 50px 32px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0px 20px 66px 20px;
+      /* font-size: 30px; */
+    }
+
+    @media (max-width: 500px) {
+      font-size: 25px;
+      line-height: 34px;
+      padding-bottom: 68px;
+    }
   }
 
-  .getButton {
+  .faqButtonWrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #eff2f2;
+    padding-left: 14px;
+    display: grid;
+    place-items: center;
+    border-top-left-radius: 26px;
+
+    @media (max-width: 768px) {
+      background-color: #cfe3e1;
+    }
+
+    @media (max-width: 720px) {
+      background-color: #c4dddb;
+    }
+
+    @media (max-width: 500px) {
+      background-color: #cbe1df;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 32px;
+      height: 24px;
+      top: -24px;
+      right: 0px;
+      border-bottom-right-radius: 76%;
+      box-shadow: 7px 5px 0 #eff2f2;
+
+      @media (max-width: 768px) {
+        box-shadow: 7px 5px 0 #cfe3e1;
+      }
+
+      @media (max-width: 768px) {
+        box-shadow: 7px 5px 0 #c4dddb;
+      }
+
+      @media (max-width: 500px) {
+        box-shadow: 7px 5px 0 #cbe1df;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      left: -32px;
+      bottom: 0;
+      border-bottom-right-radius: 67%;
+      box-shadow: 10px 5px 0 #eff2f2;
+
+      @media (max-width: 768px) {
+        box-shadow: 10px 5px 0 #cfe3e1;
+      }
+
+      @media (max-width: 768px) {
+        box-shadow: 10px 5px 0 #c4dddb;
+      }
+
+      @media (max-width: 500px) {
+        box-shadow: 10px 5px 0 #cbe1df;
+      }
+    }
+
+    .getButton {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      color: #fff;
+      background: #388D86;
+      border-radius: 9999px;
+      border: 1px solid #D1D5DB;
+      /* transition: background 0.3s ease; */
+      font-size: 20px;
+      font-weight: 400;
+
+      &:hover {
+        /* background-color: #1b9c92;
+        color: black; */
+      }
+    }
+  }
+
+  /* .getButton {
     background: #388D86;
     color: #fff;
     border-radius: 30px;
@@ -438,7 +565,7 @@
     right: 12px;
     font-size: 20px;
     font-weight: 400;
-  }
+  } */
 }
 
 :global(#faqs-section) {
@@ -447,7 +574,7 @@
   &::after {
     content: "";
     position: absolute;
-    background-image: url('data:image/svg+xml,%3Csvg%20width%3D%22890%22%20height%3D%221714%22%20viewBox%3D%220%200%20890%201714%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20filter%3D%22url(%23filter0_f_28_38)%22%3E%3Ccircle%20cx%3D%22857%22%20cy%3D%22857%22%20r%3D%22257%22%20fill%3D%22%23388D86%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_f_28_38%22%20x%3D%220%22%20y%3D%220%22%20width%3D%221714%22%20height%3D%221714%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22shape%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%22300%22%20result%3D%22effect1_foregroundBlur_28_38%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3C%2Fsvg%3E');
+    background-image: url('../../../../assets/faqBackground.svg');
     background-size: cover;
     background-repeat: no-repeat;
     top: 0px;
@@ -475,13 +602,6 @@
     font-size: 20px;
     line-height: 30px;
   }
-
-  /* p {
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-  } */
 }
 
 :global(#instructor-section) {
@@ -490,7 +610,7 @@
   &::after {
     content: "";
     position: absolute;
-    background-image: url('data:image/svg+xml,%3Csvg%20width%3D%22890%22%20height%3D%221054%22%20viewBox%3D%220%200%20890%201054%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20filter%3D%22url%28%23filter0_f_28_37%29%22%3E%3Ccircle%20cx%3D%2233%22%20cy%3D%22197%22%20r%3D%22257%22%20fill%3D%22%23388D86%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_f_28_37%22%20x%3D%22-824%22%20y%3D%22-660%22%20width%3D%221714%22%20height%3D%221714%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22shape%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%22300%22%20result%3D%22effect1_foregroundBlur_28_37%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3C%2Fsvg%3E');
+    background-image: url('../../../../assets//instructorBackground.svg');
     background-size: cover;
     background-repeat: no-repeat;
     top: 0px;

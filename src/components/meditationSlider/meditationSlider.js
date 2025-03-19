@@ -47,7 +47,7 @@ const MeditationSlider = () => {
               <div>
                 <img src={data.image} alt="Slider Image" />
               </div>
-              <div>
+              <div className={css.sliderRight}>
                 <h1 className={css.sliderHeading}>{data.heading}</h1>
                 <p className={css.sliderDescription}>{data.description}</p>
               </div>

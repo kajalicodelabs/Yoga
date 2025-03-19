@@ -1,4 +1,3 @@
-
 .sliderWrapper {
     display: flex !important;
     align-items: center;
@@ -9,9 +8,8 @@
     border-radius: 20px;
 
     @media (max-width: 500px) {
-        width: 310px !important;
+        width: 340px !important;
     }
-    /* width: unset; */
 
     & .sliderHeading {
         font-family: "Poppins", serif;
@@ -19,8 +17,9 @@
         font-size: 18px;
         line-height: 18px;
         margin: 0px;
+
         @media (max-width: 576px) {
-            font-size: 14px;
+            font-size: 12px;
         }
     }
 
@@ -30,9 +29,16 @@
         font-size: 12px;
         line-height: 15px;
         margin: 0px;
+
         @media (max-width: 576px) {
             font-size: 10px;
         }
     }
-}
 
+    & .sliderRight {
+        @media (max-width: 500px) {
+            /* background-color: red; */
+            margin-right: 22px;
+        }
+    }
+}

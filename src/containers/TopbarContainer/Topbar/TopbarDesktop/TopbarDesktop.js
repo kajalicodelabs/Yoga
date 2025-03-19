@@ -194,31 +194,50 @@ const TopbarDesktop = props => {
     />
   );
 
-  return (
-    <nav className={classes}>
-      <LinkedLogo
-        className={css.logoLink}
-        layout="desktop"
-        alt={intl.formatMessage({ id: 'TopbarDesktop.logo' }, { marketplaceName })}
-        linkToExternalSite={config?.topbar?.logoLink}
-      />
-      {/* {searchFormMaybe} */}
+  const [scrolled, setScrolled] = useState(false);
 
-      {/* <CustomLinksMenu
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50); // Change when scrolled 50px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll); // Cleanup on unmount
+  }, []);
+
+  console.log(scrolled, 'scrolled');
+  return (
+    <div
+      style={{
+        backgroundColor: scrolled ? 'white' : '',
+      }}
+    >
+      <nav className={classes}>
+        <LinkedLogo
+          className={css.logoLink}
+          layout="desktop"
+          alt={intl.formatMessage({ id: 'TopbarDesktop.logo' }, { marketplaceName })}
+          linkToExternalSite={config?.topbar?.logoLink}
+        />
+        {/* {searchFormMaybe} */}
+
+        {/* <CustomLinksMenu
         currentPage={currentPage}
         customLinks={customLinks}
         intl={intl}
         hasClientSideContentReady={authenticatedOnClientSide || !isAuthenticatedOrJustHydrated}
       /> */}
 
-      {/* {inboxLinkMaybe} */}
-      {/* {profileMenuMaybe} */}
+        {/* {inboxLinkMaybe} */}
+        {/* {profileMenuMaybe} */}
 
-      <div>
-        {signupLinkMaybe}
-        {loginLinkMaybe}
-      </div>
-    </nav>
+        <div>
+          {signupLinkMaybe}
+          {loginLinkMaybe}
+        </div>
+      </nav>
+    </div>
   );
 };
 

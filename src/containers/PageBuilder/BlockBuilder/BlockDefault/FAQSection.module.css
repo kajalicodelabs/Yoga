@@ -2,15 +2,21 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
     & h1 {
         /* font-family: Poppins; */
         font-weight: 600;
         font-size: 20px;
-        line-height: 30px;
+        /* line-height: 30px; */
         margin: 0px;
         padding: 0px;
-        @media (max-width: 500px) {
+
+        @media (max-width: 768px) {
             font-size: 18px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 16px;
         }
     }
 
@@ -24,16 +30,24 @@
         margin-top: 20px;
     }
 
-    & .faqContainer{
+    & .faqContainer {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: 768px) {
+            gap: 18px;
+        }
     }
-    
+
 }
 
-.faqCard{
+.faqCard {
     border-radius: 20px;
     padding: 20px;
     background-color: #fff;
+
+    @media (max-width: 768px) {
+        padding: 14px 18px;
+    }
 }

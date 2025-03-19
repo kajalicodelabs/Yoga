@@ -87,11 +87,12 @@ const BlockDefault = props => {
       {blockId === 'faq-left-section' ? (
         <div className={css.joinBackground}>
           <h1 className={css.leftHeading}>Need any help? Don’t hesitate to join us</h1>
-          <div className={css.floatingWrapper}>
-            <button className={css.getButton}>Get In touch</button>
-            <IconCard brand="rightarrow" />
+          <div className={css.faqButtonWrapper}>
+            <button className={css.getButton}>
+              Get In touch
+              <IconCard brand="rightarrow" />
+            </button>
           </div>
-
           {/* <button className={css.getButton}>
             Get In touch
             <IconCard brand="rightarrow" />

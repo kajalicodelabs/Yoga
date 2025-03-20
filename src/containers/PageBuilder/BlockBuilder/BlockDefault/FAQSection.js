@@ -14,7 +14,7 @@ const FAQSection = () => {
 
   const [openIndex, setOpenIndex] = useState(null);
 
-  const handleIconClick = (index) => {
+  const handleIconClick = index => {
     if (openIndex === index) {
       setOpenIndex(null);
     } else {
@@ -22,7 +22,7 @@ const FAQSection = () => {
     }
   };
 
-  console.log(openIndex, "openIndex")
+  console.log(openIndex, 'openIndex');
   return (
     <>
       <div className={css.faqWrapper}>

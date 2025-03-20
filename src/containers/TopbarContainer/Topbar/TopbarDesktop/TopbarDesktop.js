@@ -21,7 +21,7 @@ import css from './TopbarDesktop.module.css';
 
 const SignupLink = () => {
   return (
-    <NamedLink name="SignupPage" className={css.topbarLink}>
+    <NamedLink name="SignupPage" className={css.kdfjgklfdshkl}>
       <span className={css.topbarLinkLabel}>
         <FormattedMessage id="TopbarDesktop.signup" />
       </span>
@@ -145,16 +145,8 @@ const TopbarDesktop = props => {
   } = props;
   const [mounted, setMounted] = useState(false);
 
-  // const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
     setMounted(true);
-    // const handleScroll = () => {
-    //   setScrolled(window.scrollY > 50); // Change when scrolled 50px
-    // };
-
-    // window.addEventListener("scroll", handleScroll);
-    // return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const marketplaceName = config.marketplaceName;
@@ -198,12 +190,12 @@ const TopbarDesktop = props => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // Change when scrolled 50px
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll); // Cleanup on unmount
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   console.log(scrolled, 'scrolled');
@@ -233,8 +225,8 @@ const TopbarDesktop = props => {
         {/* {profileMenuMaybe} */}
 
         <div>
-          {signupLinkMaybe}
-          {loginLinkMaybe}
+          <span className={css.singupButton}>{signupLinkMaybe}</span>
+          <span className={css.loginButton}>{loginLinkMaybe}</span>
         </div>
       </nav>
     </div>

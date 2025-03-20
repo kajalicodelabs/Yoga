@@ -58,7 +58,7 @@ const SlickSlider = () => {
         <button className={css.testimonialsBtn}>Testimonial</button>
         <h1 className={css.testimonialsHeading}>Trusted by Many, Loved by All</h1>
         <p className={css.testimonialsDescription}>Discover how our services have transformed lives! Read real experiences from our happy clients who have found guidance, clarity, and success through our expert support.</p>
-        <button className={css.readMoreButton}>Read More
+        <button className={css.readMoreButton}>Read more
           <IconCard brand="rightarrow" />
         </button>
       </div>

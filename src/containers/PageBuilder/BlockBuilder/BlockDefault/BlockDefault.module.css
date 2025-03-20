@@ -26,13 +26,11 @@
   &>ol {
     text-align: left;
     width: fit-content;
-    /* center */
     margin-left: auto;
     margin-right: auto;
   }
 
   &>p {
-    /* center */
     margin-left: auto;
     margin-right: auto;
   }
@@ -72,19 +70,15 @@
 
     @media (max-width: 1024px) {
       font-size: 60px;
-      line-height: 60px;
-    }
-
-    @media (max-width: 576px) {
+      line-height: 54px;
       width: unset;
-      font-size: 40px;
-      margin-bottom: 10px;
-      /* line-height: normal; */
     }
 
     @media (max-width: 500px) {
-      margin-bottom: 32px;
-      line-height: 45px;
+      width: unset;
+      font-size: 50px;
+      line-height: 50px;
+      /* margin-bottom: 10px; */
     }
   }
 
@@ -115,10 +109,11 @@
 
     @media (max-width: 1024px) {
       margin-bottom: 40px;
+      margin-top: 60px;
     }
 
     @media (max-width: 576px) {
-      margin-top: 60px;
+      margin-top: 50px;
     }
 
     & a {
@@ -195,10 +190,6 @@
 :global(#hero-section) {
   position: relative;
 
-  &>div {
-    /* padding: 0px 24px; */
-  }
-
   &::after {
     content: "";
     position: absolute;
@@ -231,20 +222,24 @@
 
 :global(#journy-card) {
   box-shadow: 10px 50px 60px 0px #388D8633;
-  /* width: 400px; */
   width: 100%;
-  /* height: 400px; */
   border-radius: 60px;
   padding: 46px;
   background-color: #FFFFFF !important;
   position: relative;
   z-index: 2;
 
+  @media(max-width: 1024px) {
+    min-width: 300px;
+  }
+
   @media (max-width: 1280px) {
     padding: 30px;
     border-radius: 35px;
-    /* width: 370px; */
-    /* height: 390px; */
+  }
+
+  @media (max-width: 1024px) {
+    padding: 18px;
   }
 
   &>div {
@@ -264,6 +259,10 @@
   position: relative;
   z-index: 2;
 
+  @media (max-width: 1024px) {
+    min-width: 300px;
+  }
+
   &>div {
     & img {
       width: 100%;
@@ -273,9 +272,6 @@
         height: 332px;
         padding: 0px;
       }
-
-      /* height: 600px;
-      object-fit: contain; */
     }
 
     &>div {
@@ -346,11 +342,9 @@
   background-image: url('../../../../assets/joinBackground.png');
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-color: rgb(90, 212, 90); */
   overflow: hidden;
   border-radius: 30px 30px 0px 30px;
   background-position: bottom;
-  /* border-radius: 30px; */
 
   &>div {
     &>div {
@@ -453,7 +447,6 @@
 
     @media (max-width: 768px) {
       padding: 0px 20px 66px 20px;
-      /* font-size: 30px; */
     }
 
     @media (max-width: 500px) {
@@ -476,7 +469,7 @@
     border-top-left-radius: 26px;
 
     @media (max-width: 768px) {
-      background-color: #cfe3e1;
+      background-color: #eff7f6;
     }
 
     @media (max-width: 720px) {
@@ -498,10 +491,10 @@
       box-shadow: 7px 5px 0 #eff2f2;
 
       @media (max-width: 768px) {
-        box-shadow: 7px 5px 0 #cfe3e1;
+        box-shadow: 7px 5px 0 #eff7f6;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 720px) {
         box-shadow: 7px 5px 0 #c4dddb;
       }
 
@@ -521,10 +514,10 @@
       box-shadow: 10px 5px 0 #eff2f2;
 
       @media (max-width: 768px) {
-        box-shadow: 10px 5px 0 #cfe3e1;
+        box-shadow: 10px 5px 0 #eff7f6;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 720px) {
         box-shadow: 10px 5px 0 #c4dddb;
       }
 
@@ -546,27 +539,17 @@
       font-size: 20px;
       font-weight: 400;
 
-      &:hover {
-        /* background-color: #1b9c92;
-        color: black; */
+      @media (max-width: 1200px) {
+        padding: 10px 14px;
+        font-size: 18px;
+      }
+
+      @media (max-width: 500px) {
+        padding: 6px 14px;
+        font-size: 14px;
       }
     }
   }
-
-  /* .getButton {
-    background: #388D86;
-    color: #fff;
-    border-radius: 30px;
-    border: 1px solid #388D86;
-    padding: 8px 16px;
-    display: flex;
-    gap: 10px;
-    position: absolute;
-    bottom: 20px;
-    right: 12px;
-    font-size: 20px;
-    font-weight: 400;
-  } */
 }
 
 :global(#faqs-section) {
@@ -591,12 +574,6 @@
 }
 
 :global(#faq-right-section) {
-  &>div {
-    /* border-radius: 20px;
-    padding: 20px;
-    background-color: #fff; */
-  }
-
   & h3 {
     font-family: "Poppins", serif;
     font-weight: 600;

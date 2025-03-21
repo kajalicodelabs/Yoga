@@ -10,7 +10,8 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 32px;
   margin: 0 auto;
-  padding: 24px 0px;
+  /* padding: 24px 0px; */
+  padding: 48px 0px 70px 0px;
 
   @media(max-width: 1320px) {
     padding: 50px 48px 40px 48px !important;
@@ -101,8 +102,10 @@
   display: inline-block;
   font-size: 12px;
   line-height: 16px;
-  color: var(--colorGrey500);
-  margin-top: 24px;
+  font-weight: 400;
+  color: #000;
+  /* color: var(--colorGrey500); */
+  margin-top: 10px;
 }
 
 .icons {
@@ -229,9 +232,9 @@
   }
 }
 
-
+/* 
 .footerSection {
   .span {
     background-color: red;
   }
-}
+} */

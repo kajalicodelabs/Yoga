@@ -57,7 +57,7 @@ const SectionContainer = props => {
             ? css.sliderSection
             : id == 'yoga-classes'
             ? css.yogaSection
-            : id == 'footer-section'
+            : id == 'footer'
             ? css.footerSection
             : css.sectionContent
         }

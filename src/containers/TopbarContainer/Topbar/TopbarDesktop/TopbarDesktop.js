@@ -200,35 +200,39 @@ const TopbarDesktop = props => {
 
   console.log(scrolled, 'scrolled');
   return (
-    <div
-      style={{
-        backgroundColor: scrolled ? 'white' : '',
-      }}
-    >
-      <nav className={classes}>
-        <LinkedLogo
-          className={css.logoLink}
-          layout="desktop"
-          alt={intl.formatMessage({ id: 'TopbarDesktop.logo' }, { marketplaceName })}
-          linkToExternalSite={config?.topbar?.logoLink}
-        />
-        {/* {searchFormMaybe} */}
+    <div className={css.header}>
+      <div
+        style={{
+          backgroundColor: scrolled ? 'white' : '',
+        }}
+      >
+        <nav className={classes}>
+          <div className={css.logo}>
+            <LinkedLogo
+              className={css.logoLink}
+              layout="desktop"
+              alt={intl.formatMessage({ id: 'TopbarDesktop.logo' }, { marketplaceName })}
+              linkToExternalSite={config?.topbar?.logoLink}
+            />
+          </div>
+          {/* {searchFormMaybe} */}
 
-        {/* <CustomLinksMenu
+          {/* <CustomLinksMenu
         currentPage={currentPage}
         customLinks={customLinks}
         intl={intl}
         hasClientSideContentReady={authenticatedOnClientSide || !isAuthenticatedOrJustHydrated}
       /> */}
 
-        {/* {inboxLinkMaybe} */}
-        {/* {profileMenuMaybe} */}
+          {/* {inboxLinkMaybe} */}
+          {/* {profileMenuMaybe} */}
 
-        <div>
-          <span className={css.singupButton}>{signupLinkMaybe}</span>
-          <span className={css.loginButton}>{loginLinkMaybe}</span>
-        </div>
-      </nav>
+          <div>
+            <span className={css.singupButton}>{signupLinkMaybe}</span>
+            <span className={css.loginButton}>{loginLinkMaybe}</span>
+          </div>
+        </nav>
+      </div>
     </div>
   );
 };

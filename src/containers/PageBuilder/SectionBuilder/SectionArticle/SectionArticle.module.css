@@ -15,7 +15,7 @@
 
 .doingTodayButton {
   border-radius: 16px;
-  padding: 10px 20px;
+  padding: 13px 20px;
   color: #fff;
   border: 1px solid #FFFFFF;
   backdrop-filter: blur(10px);
@@ -23,7 +23,8 @@
   margin-top: 20px;
   display: flex;
   gap: 10px;
-
+  font-family: "Poppins", serif;
+  
   @media (max-width: 576px) {
     padding: 8px 14px;
   }
@@ -131,6 +132,7 @@
       font-size: 10px;
       line-height: 15px;
       margin: 0px;
+      padding: 0px;
     }
   }
 

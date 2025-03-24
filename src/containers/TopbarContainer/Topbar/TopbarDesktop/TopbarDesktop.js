@@ -225,7 +225,7 @@ const TopbarDesktop = props => {
       /> */}
 
           {/* {inboxLinkMaybe} */}
-          {/* {profileMenuMaybe} */}
+          {profileMenuMaybe}
 
           <div>
             <span className={css.singupButton}>{signupLinkMaybe}</span>

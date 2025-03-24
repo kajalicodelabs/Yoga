@@ -214,13 +214,16 @@
   &::after {
     content: "";
     position: absolute;
-    background-image: url('../../../../assets/meditationBackground.svg');
+    background-image: url(http://localhost:3000/static/media/heroBackground.2115c1f….svg), linear-gradient(to top, rgb(255 255 255 / 0%) 0%, rgb(200 223 222) 70%);
+    /* background-image: url(http://localhost:3000/static/media/heroBackground.2115c1f….svg), linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgb(202 226 224) 70%); */
+    /* background-image: url('../../../../assets/meditationBackground.svg'); */
     background-size: cover;
     background-repeat: no-repeat;
     top: 0px;
     bottom: 0px;
     width: 100%;
     background-position: left;
+    filter: blur(200px);
   }
 
   &>div {
@@ -288,15 +291,15 @@
     padding: 0px;
 
     @media(max-width: 1320px) {
-      padding: 0px 48px 0px 48px !important;
+      padding: 0px 48px 0px 48px;
     }
 
     @media(max-width: 920px) {
-      padding: 0px 32px 0px 32px !important;
+      padding: 0px 32px 0px 32px;
     }
 
     @media(max-width: 500px) {
-      padding: 0px 16px 0px 16px !important;
+      padding: 0px 16px 0px 16px;
     }
 
     & h2 {

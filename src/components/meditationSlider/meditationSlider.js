@@ -31,11 +31,16 @@ const MeditationSlider = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 1.05,
     slidesToScroll: 1,
+    arrows: false,
     // autoplay: true,
     // autoplaySpeed: 2000,
-    arrows: false,
+    rtl: false,
+    initialSlide: 0,
+    centerMode: true, // Centers slides
+    centerPadding: '30px', // Adds gap around slides
+    cssEase: 'linear',
   };
 
   return (
@@ -44,7 +49,7 @@ const MeditationSlider = () => {
         {sliderData.map((data, index) => {
           return (
             <div className={css.sliderWrapper} key={index}>
-              <div>
+              <div className={css.sliderImage}>
                 <img src={data.image} alt="Slider Image" />
               </div>
               <div className={css.sliderRight}>

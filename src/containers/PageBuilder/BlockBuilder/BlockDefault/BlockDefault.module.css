@@ -191,7 +191,7 @@
   }
 }
 
-:global(#hero-section) {
+/* :global(#hero-section) {
   position: relative;
 
   &::after {
@@ -204,6 +204,27 @@
     bottom: 0px;
     width: 100%;
     background-position: left;
+    filter: blur(200px);
+  }
+} */
+
+:global(#hero-section) {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -72px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    background-image:
+      url(http://localhost:3000/static/media/heroBackground.2115c1f….svg), linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgb(202 226 224) 70%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    /* filter: blur(200px);
+    z-index: -1; */
   }
 }
 
@@ -213,6 +234,8 @@
   &::after {
     content: "";
     position: absolute;
+    /* background-image: */
+    /* url(http://localhost:3000/static/media/heroBackground.2115c1f….svg), linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgb(202 226 224) 70%); */
     background-image: url('../../../../assets/cardBackground.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -221,6 +244,7 @@
     width: 100%;
     right: 0px;
     background-position: right;
+    filter: blur(200px);
   }
 }
 

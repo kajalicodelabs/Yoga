@@ -1130,5 +1130,9 @@
   "SignupForm.stateNameRequired": "You need to a State Name",
   "SignupForm.zipCodeLabel": "Zipcode",
   "SignupForm.zipCodePlaceholder": "Enter a zipcode",
-  "SignupForm.zipcodeRequired": "You need to add a zipcode"
+  "SignupForm.zipcodeRequired": "You need to add a zipcode",
+  "SignupForm.userTypeLabel": "Select your role",
+  "SignupForm.instructorLabel": "Instructor",
+  "SignupForm.customerLabel": "Customer",
+  "SignupForm.userTypeRequired": "Please select at least one role"
 }

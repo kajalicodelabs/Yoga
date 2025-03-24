@@ -140,7 +140,49 @@ const SignupFormComponent = props => (
           />
 
           {showDefaultUserFields ? (
+
+
             <div className={css.defaultUserFields}>
+
+
+              <FieldTextInput
+                type="radio"
+                id={'userType'}
+                name="userType"
+                label={intl.formatMessage({
+                  id: 'SignupForm.userTypeLabel',
+                })}
+                placeholder={intl.formatMessage({
+                  id: 'SignupForm.userTypePlaceholder',
+                })}
+                // options={[
+                //   { key: 'instructor', label: intl.formatMessage({ id: 'SignupForm.instructorLabel' }) },
+                //   { key: 'customer', label: intl.formatMessage({ id: 'SignupForm.customerLabel' }) }
+                // ]}
+                validate={validators.required(
+                  intl.formatMessage({
+                    id: 'SignupForm.userTypeRequired',
+                  })
+                )}
+              />
+
+              <FieldTextInput
+                type="radio"
+                id="instructor"
+                name="userType"
+                label={intl.formatMessage({ id: 'SignupForm.instructorLabel' })}
+                value="instructor"
+                validate={validators.required(intl.formatMessage({ id: 'SignupForm.userTypeRequired' }))}
+              />
+
+              <FieldTextInput
+                type="radio"
+                id="customer"
+                name="userType"
+                label={intl.formatMessage({ id: 'SignupForm.customerLabel' })}
+                value="customer"
+              />
+
               <FieldTextInput
                 type="email"
                 id={formId ? `${formId}.email` : 'email'}

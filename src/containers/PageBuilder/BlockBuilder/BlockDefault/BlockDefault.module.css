@@ -172,6 +172,10 @@
     width: 732px;
     object-fit: contain;
 
+    @media (max-width: 1400px) {
+      height: 670px;
+      width: 630px;
+    }
     @media(max-width: 1320px) {
       width: 500px;
       height: 100%;
@@ -397,6 +401,9 @@
       &>div {
         & img {
           display: none;
+          height: 640px;
+          width: 100%;
+          border-radius: 30px;
         }
       }
     }
@@ -600,6 +607,7 @@
 
 :global(#faqs-section) {
   position: relative;
+  padding: 50px 0px;
 
   &::after {
     content: "";

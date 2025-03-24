@@ -54,6 +54,34 @@ const SignupFormComponent = props => (
         })
       );
 
+      // displayName latest
+      const displayNameRequired = validators.required(
+        intl.formatMessage({
+          id: 'SignupForm.displayNameRequired',
+        })
+      );
+
+      // country name
+      const countryNameRequired = validators.required(
+        intl.formatMessage({
+          id: 'SignupForm.countryNameRequired',
+        })
+      );
+
+      //state name
+      const stateNameRequired = validators.required(
+        intl.formatMessage({
+          id: 'SignupForm.stateNameRequired',
+        })
+      );
+
+      //zip code
+      const zipcodeRequired = validators.required(
+        intl.formatMessage({
+          id: 'SignupForm.zipcodeRequired',
+        })
+      );
+
       // password
       const passwordRequiredMessage = intl.formatMessage({
         id: 'SignupForm.passwordRequired',
@@ -185,6 +213,82 @@ const SignupFormComponent = props => (
                   id: 'SignupForm.passwordPlaceholder',
                 })}
                 validate={passwordValidators}
+              />
+
+              {/*display name */}
+
+              <FieldTextInput
+                type="text"
+                id={'dname'}
+                name="dname"
+                label={intl.formatMessage({
+                  id: 'SignupForm.displayNameLabel',
+                })}
+                placeholder={intl.formatMessage({
+                  id: 'SignupForm.displayNamePlaceholder',
+                })}
+                validate={validators.required(
+                  intl.formatMessage({
+                    id: 'SignupForm.displayNameRequired',
+                  })
+                )}
+              />
+              {/* country input */}
+
+              <FieldTextInput
+                className={css.countryName}
+                type="text"
+                id={'countryname'}
+                name="countryname"
+                label={intl.formatMessage({
+                  id: 'SignupForm.countryNameLabel',
+                })}
+                placeholder={intl.formatMessage({
+                  id: 'SignupForm.countryNamePlaceholder',
+                })}
+                validate={validators.required(
+                  intl.formatMessage({
+                    id: 'SignupForm.countryNameRequired',
+                  })
+                )}
+              />
+
+              {/* state */}
+              <FieldTextInput
+                type="text"
+                id={'statename'}
+                name="statename"
+                label={intl.formatMessage({
+                  id: 'SignupForm.stateNameLabel',
+                })}
+                placeholder={intl.formatMessage({
+                  id: 'SignupForm.stateNamePlaceholder',
+                })}
+                validate={validators.required(
+                  intl.formatMessage({
+                    id: 'SignupForm.stateNameRequired',
+                  })
+                )}
+              />
+
+              {/* zip code */}
+
+              <FieldTextInput
+                type="text"
+                id={'zipcode'}
+                name="zipcode"
+                pattern="[0-9]"
+                label={intl.formatMessage({
+                  id: 'SignupForm.zipCodeLabel',
+                })}
+                placeholder={intl.formatMessage({
+                  id: 'SignupForm.zipCodePlaceholder',
+                })}
+                validate={validators.required(
+                  intl.formatMessage({
+                    id: 'SignupForm.zipcodeRequired',
+                  })
+                )}
               />
 
               <UserFieldPhoneNumber

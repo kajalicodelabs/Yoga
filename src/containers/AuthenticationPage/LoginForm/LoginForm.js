@@ -83,6 +83,7 @@ const LoginFormComponent = props => (
               validate={passwordRequired}
             />
           </div>
+
           <div className={css.bottomWrapper}>
             <p className={css.bottomWrapperText}>
               <span className={css.recoveryLinkInfo}>

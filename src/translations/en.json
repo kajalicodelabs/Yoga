@@ -1117,5 +1117,18 @@
   "UserDisplayName.deleted": "Deleted user",
   "UserNav.accountSettings": "Account settings",
   "UserNav.profileSettings": "Profile settings",
-  "UserNav.yourListings": "Your listings"
+  "UserNav.yourListings": "Your listings",
+
+  "SignupForm.displayNameLabel": "Display Name",
+  "SignupForm.displayNamePlaceholder": "Enter a Display Name",
+  "SignupForm.displayNameRequired": "You need to add a display name.",
+  "SignupForm.countryNameLabel": "Country",
+  "SignupForm.countryNamePlaceholder": "Enter a Country Name",
+  "SignupForm.countryNameRequired": "You nedd to add a country name",
+  "SignupForm.stateNameLabel": "State",
+  "SignupForm.stateNamePlaceholder": "Enter a State Name",
+  "SignupForm.stateNameRequired": "You need to a State Name",
+  "SignupForm.zipCodeLabel": "Zipcode",
+  "SignupForm.zipCodePlaceholder": "Enter a zipcode",
+  "SignupForm.zipcodeRequired": "You need to add a zipcode"
 }

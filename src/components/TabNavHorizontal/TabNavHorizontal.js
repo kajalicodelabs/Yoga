@@ -8,7 +8,8 @@ export const LIGHT_SKIN = 'light';
 export const DARK_SKIN = 'dark';
 
 const Tab = props => {
-  const { className, disabled, text, selected, onClick, linkProps, isDark } = props;
+  const { className, disabled, text, selected, onClick, linkProps, isDark, authentionTabs } = props;
+  // console.log(authentionTabs, 'authentionTabs');
   const darkSkinClasses = isDark
     ? classNames(css.tabContentDarkSkin, {
         [css.selectedTabContentDarkSkin]: selected,
@@ -20,6 +21,15 @@ const Tab = props => {
     css.tabContent,
     {
       [css.selectedTabContent]: selected,
+      [css.disabled]: disabled,
+    },
+    darkSkinClasses
+  );
+
+  const authClasses = classNames(
+    css.authTabContent,
+    {
+      [css.selectedAuthTabContent]: selected,
       [css.disabled]: disabled,
     },
     darkSkinClasses
@@ -44,7 +54,7 @@ const Tab = props => {
           {text}
         </InlineTextButton>
       ) : (
-        <NamedLink className={linkClasses} {...linkProps}>
+        <NamedLink className={authentionTabs ? authClasses : linkClasses} {...linkProps}>
           {text}
         </NamedLink>
       )}
@@ -53,7 +63,15 @@ const Tab = props => {
 };
 
 const TabNavHorizontal = props => {
-  const { className, rootClassName, tabRootClassName, tabs, skin = LIGHT_SKIN } = props;
+  const {
+    className,
+    rootClassName,
+    tabRootClassName,
+    tabs,
+    skin = LIGHT_SKIN,
+    authentionTabs,
+  } = props;
+
   const isDark = skin === DARK_SKIN;
   const classes = classNames(rootClassName || css.root, { [css.darkSkin]: isDark }, className);
   const tabClasses = tabRootClassName || css.tab;
@@ -61,7 +79,15 @@ const TabNavHorizontal = props => {
     <nav className={classes}>
       {tabs.map((tab, index) => {
         const key = typeof tab.text === 'string' ? tab.text : index;
-        return <Tab key={key} className={tabClasses} {...tab} isDark={isDark} />;
+        return (
+          <Tab
+            authentionTabs={authentionTabs}
+            key={key}
+            className={tabClasses}
+            {...tab}
+            isDark={isDark}
+          />
+        );
       })}
     </nav>
   );
@@ -107,4 +133,4 @@ export const ButtonTabNavHorizontal = props => <TabNavHorizontal {...props} />;
  * @param {LIGHT_SKIN | DARK_SKIN} [props.skin] - The skin of the tab navigation
  * @returns {JSX.Element}
  */
-export const LinkTabNavHorizontal = props => <TabNavHorizontal {...props} />;
+export const LinkTabNavHorizontal = props => <TabNavHorizontal authentionTabs {...props} />;

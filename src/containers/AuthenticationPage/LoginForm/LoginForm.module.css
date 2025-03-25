@@ -30,3 +30,60 @@
 .recoveryLinkInfo {
   composes: marketplaceModalHelperText from global;
 }
+
+/* custom css */
+.emailLoginInput {
+  margin-top: 30px;
+
+  & label {
+    font-family: "Poppins", serif;
+    padding: 0px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+  }
+
+  & input {
+    border: 1px solid #C8C8C8;
+    padding: 9px 14px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+}
+
+.password {
+  margin-top: 30px;
+
+  & label {
+    font-family: "Poppins", serif;
+    padding: 0px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+  }
+
+  & input {
+    border: 1px solid #C8C8C8;
+    padding: 9px 14px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+}
+
+.bottomWrapper {
+  margin-top: 60px;
+
+  .bottomWrapperText {
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 20px;
+
+    & .recoveryLinkInfo {
+      font-family: "Poppins", serif;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+}

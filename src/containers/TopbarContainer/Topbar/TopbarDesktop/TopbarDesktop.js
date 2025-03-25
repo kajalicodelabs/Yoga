@@ -198,7 +198,7 @@ const TopbarDesktop = props => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  console.log(scrolled, 'scrolled');
+  // console.log(scrolled, 'scrolled');
   return (
     <div className={css.header}>
       <div

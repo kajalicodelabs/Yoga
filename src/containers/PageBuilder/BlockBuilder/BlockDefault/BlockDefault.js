@@ -63,7 +63,7 @@ const BlockDefault = props => {
     options,
     alignment,
   } = props;
-  console.log(blockId, 'blockId');
+  // console.log(blockId, 'blockId');
   const classes = classNames(rootClassName || css.root, className);
   const hasTextComponentFields = hasDataInFields([title, text, callToAction], options);
 

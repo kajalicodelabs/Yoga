@@ -8,7 +8,13 @@ import { propTypes } from '../../../util/types';
 import * as validators from '../../../util/validators';
 import { getPropsForCustomUserFieldInputs } from '../../../util/userHelpers';
 
-import { Form, PrimaryButton, FieldTextInput, CustomExtendedDataField } from '../../../components';
+import {
+  Form,
+  PrimaryButton,
+  FieldTextInput,
+  CustomExtendedDataField,
+  // FieldRadioButton,
+} from '../../../components';
 
 import FieldSelectUserType from '../FieldSelectUserType';
 import UserFieldDisplayName from '../UserFieldDisplayName';
@@ -140,50 +146,35 @@ const SignupFormComponent = props => (
           />
 
           {showDefaultUserFields ? (
-
-
             <div className={css.defaultUserFields}>
+              <div className={css.userType}>
+                <p className={css.userTypeLabel}>User type</p>
 
+                <div className={css.userTypeButton}>
+                  <FieldTextInput
+                    type="radio"
+                    id="instructor"
+                    className={css.checkBox}
+                    name="userType"
+                    label={intl.formatMessage({ id: 'SignupForm.instructorLabel' })}
+                    value="instructor"
+                    validate={validators.required(
+                      intl.formatMessage({ id: 'SignupForm.userTypeRequired' })
+                    )}
+                  />
 
+                  <FieldTextInput
+                    type="radio"
+                    id="customer"
+                    className={css.checkBox}
+                    name="userType"
+                    label={intl.formatMessage({ id: 'SignupForm.customerLabel' })}
+                    value="customer"
+                  />
+                </div>
+              </div>
               <FieldTextInput
-                type="radio"
-                id={'userType'}
-                name="userType"
-                label={intl.formatMessage({
-                  id: 'SignupForm.userTypeLabel',
-                })}
-                placeholder={intl.formatMessage({
-                  id: 'SignupForm.userTypePlaceholder',
-                })}
-                // options={[
-                //   { key: 'instructor', label: intl.formatMessage({ id: 'SignupForm.instructorLabel' }) },
-                //   { key: 'customer', label: intl.formatMessage({ id: 'SignupForm.customerLabel' }) }
-                // ]}
-                validate={validators.required(
-                  intl.formatMessage({
-                    id: 'SignupForm.userTypeRequired',
-                  })
-                )}
-              />
-
-              <FieldTextInput
-                type="radio"
-                id="instructor"
-                name="userType"
-                label={intl.formatMessage({ id: 'SignupForm.instructorLabel' })}
-                value="instructor"
-                validate={validators.required(intl.formatMessage({ id: 'SignupForm.userTypeRequired' }))}
-              />
-
-              <FieldTextInput
-                type="radio"
-                id="customer"
-                name="userType"
-                label={intl.formatMessage({ id: 'SignupForm.customerLabel' })}
-                value="customer"
-              />
-
-              <FieldTextInput
+                className={css.emailInputField}
                 type="email"
                 id={formId ? `${formId}.email` : 'email'}
                 name="email"
@@ -260,8 +251,10 @@ const SignupFormComponent = props => (
               {/*display name */}
 
               <FieldTextInput
+                className={css.displayNameInput}
                 type="text"
-                id={'dname'}
+                // id={'dname'}
+                id={formId ? `${formId}.displayName` : 'displayName'}
                 name="dname"
                 label={intl.formatMessage({
                   id: 'SignupForm.displayNameLabel',
@@ -280,7 +273,8 @@ const SignupFormComponent = props => (
               <FieldTextInput
                 className={css.countryName}
                 type="text"
-                id={'countryname'}
+                // id={'countryname'}
+                id={formId ? `${formId}.country` : 'country'}
                 name="countryname"
                 label={intl.formatMessage({
                   id: 'SignupForm.countryNameLabel',
@@ -297,8 +291,10 @@ const SignupFormComponent = props => (
 
               {/* state */}
               <FieldTextInput
+                className={css.stateInputField}
                 type="text"
-                id={'statename'}
+                // id={'statename'}
+                id={formId ? `${formId}.state` : 'state' }
                 name="statename"
                 label={intl.formatMessage({
                   id: 'SignupForm.stateNameLabel',
@@ -316,10 +312,11 @@ const SignupFormComponent = props => (
               {/* zip code */}
 
               <FieldTextInput
+                className={css.zipcodeInputField}
                 type="text"
                 id={'zipcode'}
                 name="zipcode"
-                pattern="[0-9]"
+                pattern="[0-9]{6}"
                 label={intl.formatMessage({
                   id: 'SignupForm.zipCodeLabel',
                 })}
@@ -352,7 +349,12 @@ const SignupFormComponent = props => (
 
           <div className={css.bottomWrapper}>
             {termsAndConditions}
-            <PrimaryButton type="submit" inProgress={submitInProgress} disabled={submitDisabled}>
+            <PrimaryButton
+              className={css.signupButton}
+              type="submit"
+              inProgress={submitInProgress}
+              disabled={submitDisabled}
+            >
               <FormattedMessage id="SignupForm.signUp" />
             </PrimaryButton>
           </div>

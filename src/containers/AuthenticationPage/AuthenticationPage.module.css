@@ -75,7 +75,7 @@
 
 .signupForm {
   margin-top: 24px;
-
+  /* background-color: red; */
   /* We don't want the form to take the whole space so that on mobile view
   the social login buttons will be after the sign up button
   and not in the bottom of the page.
@@ -123,6 +123,7 @@
 .selectedLabel {
   composes: label from global;
 }
+
 .selectedValue {
   margin-top: 0;
   margin-bottom: 6px;
@@ -227,8 +228,7 @@
   }
 }
 
-.confirmInfoText {
-}
+.confirmInfoText {}
 
 .buttonIcon {
   position: absolute;
@@ -238,6 +238,7 @@
 
 .socialButtonWrapper {
   margin-bottom: 6px;
+
   @media (--viewportMedium) {
     margin-top: 8px;
   }
@@ -277,4 +278,14 @@
   padding: 0 20px 0 20px;
   position: relative;
   margin: 0;
+}
+
+
+/* custom signup */
+.content {
+  padding: 60px 80px 80px 80px;
+  /* flex-basis: 700px; */
+  min-width: 640px;
+  min-height: auto;
+  border-radius: 40px;
 }

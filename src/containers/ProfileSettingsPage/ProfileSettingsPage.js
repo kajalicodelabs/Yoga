@@ -126,6 +126,8 @@ export const ProfileSettingsPageComponent = props => {
     firstName,
     lastName,
     displayName,
+    // country,
+    // state,
     bio,
     publicData,
     protectedData,
@@ -133,7 +135,7 @@ export const ProfileSettingsPageComponent = props => {
   } = user?.attributes.profile;
   // I.e. the status is active, not pending-approval or banned
   const isUnauthorizedUser = currentUser && !isUserAuthorized(currentUser);
-
+  console.log(protectedData, ' ------protected data');
   const { userType } = publicData || {};
   const profileImageId = user.profileImage ? user.profileImage.id : null;
   const profileImage = image || { imageId: profileImageId };

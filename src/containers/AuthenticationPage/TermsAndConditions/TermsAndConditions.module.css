@@ -26,3 +26,35 @@
     cursor: pointer;
   }
 }
+
+
+/* custom css */
+.radioInputField {
+  padding: 0px;
+  margin: 0px;
+
+  & li {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  & span:first-child {
+
+    & svg {
+      margin-right: 10px;
+      /* background-color: blue; */
+    }
+  }
+
+  & span:last-child {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 0px;
+    color: #000;
+    /* margin-right: 10px; */
+  }
+}
+
+.termsLink {}

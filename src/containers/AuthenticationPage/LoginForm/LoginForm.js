@@ -64,6 +64,7 @@ const LoginFormComponent = props => (
         <Form className={classes} onSubmit={handleSubmit}>
           <div>
             <FieldTextInput
+              className={css.emailLoginInput}
               type="email"
               id={formId ? `${formId}.email` : 'email'}
               name="email"

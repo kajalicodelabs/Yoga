@@ -61,6 +61,7 @@ const TermsAndConditions = props => {
   return (
     <div className={css.root}>
       <FieldCheckboxGroup
+        className={css.radioInputField}
         name="terms"
         id={formId ? `${formId}.terms-accepted` : 'terms-accepted'}
         optionLabelClassName={css.finePrint}

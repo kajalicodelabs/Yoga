@@ -1134,5 +1134,9 @@
   "SignupForm.userTypeLabel": "Select your role",
   "SignupForm.instructorLabel": "Instructor",
   "SignupForm.customerLabel": "Customer",
-  "SignupForm.userTypeRequired": "Please select at least one role"
+  "SignupForm.userTypeRequired": "Please select at least one role",
+
+  "ProfileSettingsForm.countryNameLabel": "Country",
+  "ProfileSettingsForm.countryNameRequired": "This country field is required",
+  "ProfileSettingsForm.countryNamePlaceholder": "Country"
 }

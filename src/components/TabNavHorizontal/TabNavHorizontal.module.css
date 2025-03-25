@@ -93,3 +93,54 @@
   color: var(--colorBlack);
   opacity: 0.3;
 }
+
+
+/* cutsom css */
+/* .nav{
+  & div{
+    & a{
+      & h1{
+        background-color: red;
+      }
+    }
+  }
+} */
+
+.authTabContent {
+  composes: a from global;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+
+  /* Font */
+  font-weight: var(--fontWeightMedium);
+  font-size: 14px;
+  line-height: 24px;
+
+  color: #CACACA;
+  padding-bottom: 10px;
+
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+
+  transition: var(--transitionStyleButton);
+  margin-top: 0px;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: #388D86;
+  }
+
+  @media (--viewportMedium) {
+    border-bottom-width: 4px;
+    padding: 16px 10px 14px 10px;
+  }
+}
+
+.selectedAuthTabContent {
+  border-bottom-color: #388D86;
+  color: #388D86;
+}

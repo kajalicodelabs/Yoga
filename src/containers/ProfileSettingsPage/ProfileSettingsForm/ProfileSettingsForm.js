@@ -176,6 +176,21 @@ class ProfileSettingsFormComponent extends Component {
           });
           const lastNameRequired = validators.required(lastNameRequiredMessage);
 
+          // country name custom
+          const countryNameLabel = intl.formatMessage({
+            id: 'ProfileSettingsForm.countryNameLabel',
+          });
+
+          const countryNamePlaceholder = intl.formatMessage({
+            id: 'ProfileSettingsForm.countryNamePlaceholder',
+          });
+
+          const countryNameRequiredMessage = intl.formatMessage({
+            id: 'ProfileSettingsForm.countryNameRequired',
+          });
+
+          const countryNameRequired = validators.required(countryNameRequiredMessage);
+
           // Bio
           const bioLabel = intl.formatMessage({
             id: 'ProfileSettingsForm.bioLabel',
@@ -374,6 +389,18 @@ class ProfileSettingsFormComponent extends Component {
               </div>
 
               <DisplayNameMaybe userTypeConfig={userTypeConfig} intl={intl} />
+
+              {/* custom countryInput field */}
+
+              <FieldTextInput
+                className={css.country}
+                type="text"
+                id="country"
+                name="firstname"
+                label={countryNameLabel}
+                placeholder={countryNamePlaceholder}
+                validate={countryNameRequired}
+              />
 
               <div className={classNames(css.sectionContainer)}>
                 <H4 as="h2" className={css.sectionTitle}>

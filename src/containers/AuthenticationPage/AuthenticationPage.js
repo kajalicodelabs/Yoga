@@ -201,9 +201,22 @@ export const AuthenticationForms = props => {
   ];
 
   const handleSubmitSignup = values => {
-    const { userType, email, password, fname, lname, displayName, ...rest } = values;
+    // object destructuring
+    const {
+      userType,
+      email,
+      password,
+      fname,
+      lname,
+      displayName,
+      country,
+      state,
+      ...rest
+    } = values;
     const displayNameMaybe = displayName ? { displayName: displayName.trim() } : {};
 
+    console.log(password, 'password');
+    console.log(values, 'values');
     const params = {
       email,
       password,
@@ -212,6 +225,9 @@ export const AuthenticationForms = props => {
       ...displayNameMaybe,
       publicData: {
         userType,
+        displayName,
+        country,
+        state,
         ...pickUserFieldsData(rest, 'public', userType, userFields),
       },
       privateData: {
@@ -259,7 +275,7 @@ export const AuthenticationForms = props => {
 
   return (
     <div className={css.content}>
-      <LinkTabNavHorizontal className={css.tabs} tabs={tabs} />
+      <LinkTabNavHorizontal authentionTabs={true} className={css.tabs} tabs={tabs} />
       {loginOrSignupError}
 
       {isLogin ? (

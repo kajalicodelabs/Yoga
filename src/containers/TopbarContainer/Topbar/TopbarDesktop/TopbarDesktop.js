@@ -18,6 +18,7 @@ import TopbarSearchForm from '../TopbarSearchForm/TopbarSearchForm';
 import CustomLinksMenu from './CustomLinksMenu/CustomLinksMenu';
 
 import css from './TopbarDesktop.module.css';
+import { useSelector } from 'react-redux';
 
 const SignupLink = () => {
   return (
@@ -198,6 +199,10 @@ const TopbarDesktop = props => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // const isLoggedIn = useSelector((state) => state.auth.isAuthenticated)
+  console.log("isAuthenticated" , isAuthenticated);
+  
+
   // console.log(scrolled, 'scrolled');
   return (
     <div className={css.header}>
@@ -216,8 +221,8 @@ const TopbarDesktop = props => {
             />
           </div>
           {/* {searchFormMaybe} */}
-
-          {/* <CustomLinksMenu
+          {/* 
+          <CustomLinksMenu
         currentPage={currentPage}
         customLinks={customLinks}
         intl={intl}
@@ -227,10 +232,10 @@ const TopbarDesktop = props => {
           {/* {inboxLinkMaybe} */}
           {profileMenuMaybe}
 
-          <div>
+        { isAuthenticated ?  null :  <div>
             <span className={css.singupButton}>{signupLinkMaybe}</span>
             <span className={css.loginButton}>{loginLinkMaybe}</span>
-          </div>
+          </div>}
         </nav>
       </div>
     </div>

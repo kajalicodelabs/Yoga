@@ -227,7 +227,7 @@
     z-index: 9;
     margin-top: 60px;
     margin-bottom: 41px;
-    height: 800px;
+    /* height: 800px; */
 
     & img {
       border-radius: 30px;

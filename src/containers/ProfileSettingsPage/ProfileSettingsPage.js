@@ -184,13 +184,14 @@ export const ProfileSettingsPageComponent = props => {
         }
         footer={<FooterContainer />}
       >
+        <h1 className={css.profileHeading}>Profile</h1>
         <div className={css.content}>
           <div className={css.headingContainer}>
-            <H3 as="h1" className={css.heading}>
+            {/* <H3 as="h1" className={css.heading}>
               <FormattedMessage id="ProfileSettingsPage.heading" />
-            </H3>
+            </H3> */}
 
-            <ViewProfileLink userUUID={user?.id?.uuid} isUnauthorizedUser={isUnauthorizedUser} />
+            {/* <ViewProfileLink userUUID={user?.id?.uuid} isUnauthorizedUser={isUnauthorizedUser} /> */}
           </div>
           {profileSettingsForm}
         </div>

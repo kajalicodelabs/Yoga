@@ -33,7 +33,7 @@
 
 /* custom css */
 .emailLoginInput {
-  margin-top: 30px;
+  /* margin-top: 30px; */
 
   & label {
     font-family: "Poppins", serif;
@@ -52,7 +52,7 @@
 }
 
 .password {
-  margin-top: 30px;
+  /* margin-top: 30px; */
 
   & label {
     font-family: "Poppins", serif;

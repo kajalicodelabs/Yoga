@@ -211,6 +211,7 @@ export const AuthenticationForms = props => {
       displayName,
       country,
       state,
+      zipcode,
       ...rest
     } = values;
     const displayNameMaybe = displayName ? { displayName: displayName.trim() } : {};
@@ -224,10 +225,11 @@ export const AuthenticationForms = props => {
       lastName: lname.trim(),
       ...displayNameMaybe,
       publicData: {
-        userType,
-        displayName,
-        country,
-        state,
+        userType: values.userType,
+        displayName: values.dname,
+        country: values.countryname,
+        state: values.statename,
+        zipcode: values.zipcode,
         ...pickUserFieldsData(rest, 'public', userType, userFields),
       },
       privateData: {
@@ -235,7 +237,7 @@ export const AuthenticationForms = props => {
       },
       protectedData: {
         ...pickUserFieldsData(rest, 'protected', userType, userFields),
-        ...getNonUserFieldParams(rest, userFields),
+        // ...getNonUserFieldParams(rest, userFields),
       },
     };
 
@@ -332,6 +334,8 @@ const ConfirmIdProviderInfoForm = props => {
       ...rest
     } = values;
 
+    console.log(displayName, 'displayName');
+    // console.log(values, "values")
     const displayNameMaybe = displayName ? { displayName: displayName.trim() } : {};
 
     // Pass email, fistName or lastName to Marketplace API only if user has edited them

@@ -1136,7 +1136,10 @@
   "SignupForm.customerLabel": "Customer",
   "SignupForm.userTypeRequired": "Please select at least one role",
 
-  "ProfileSettingsForm.countryNameLabel": "Country",
-  "ProfileSettingsForm.countryNameRequired": "This country field is required",
-  "ProfileSettingsForm.countryNamePlaceholder": "Country"
+  "ProfileSettingsForm.cityNameLabel": "City",
+  "ProfileSettingsForm.cityNameRequired": "This city name is required",
+  "ProfileSettingsForm.cityNamePlaceholder": "Enter your city name",
+  "ProfileSettingsForm.zipcodeLabel": "Zipcode",
+  "ProfileSettingsForm.zipcodePlaceholder": "Enter a zip code",
+  "ProfileSettingsForm.zipcodeRequired": "This zipcode filed is required"
 }

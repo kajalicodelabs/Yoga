@@ -30,7 +30,7 @@
 
 .tabs {
   @media (--viewportMedium) {
-    margin-top: 6px;
+    /* margin-top: 6px; */
   }
 }
 
@@ -283,9 +283,16 @@
 
 /* custom signup */
 .content {
-  padding: 60px 80px 80px 80px;
+  padding: 60px 80px 100px 80px;
   /* flex-basis: 700px; */
   min-width: 640px;
   min-height: auto;
   border-radius: 40px;
+}
+
+.loginForm{
+  margin-top: 40px;
+}
+.signupForm{
+  margin-top: 40px;
 }

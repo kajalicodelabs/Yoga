@@ -176,6 +176,7 @@
       height: 670px;
       width: 630px;
     }
+
     @media(max-width: 1320px) {
       width: 500px;
       height: 100%;
@@ -398,10 +399,16 @@
 
   &>div {
     &>div {
+
+      /* border: 1px solid blue; */
       &>div {
+
+        /* height: 640px;
+        border: 1px solid red; */
         & img {
           display: none;
-          height: 640px;
+          /* height: 640px; */
+          height: 100%;
           width: 100%;
           border-radius: 30px;
         }

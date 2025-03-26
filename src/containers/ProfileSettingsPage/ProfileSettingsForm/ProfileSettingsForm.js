@@ -51,10 +51,10 @@ const DisplayNameMaybe = props => {
 
   return (
     <div className={css.sectionContainer}>
-      <H4 as="h2" className={css.sectionTitle}>
+      {/* <H4 as="h2" className={css.sectionTitle}>
         <FormattedMessage id="ProfileSettingsForm.displayNameHeading" />
-      </H4>
-      <FieldTextInput
+      </H4> */}
+      {/* <FieldTextInput
         className={css.row}
         type="text"
         id="displayName"
@@ -66,10 +66,10 @@ const DisplayNameMaybe = props => {
           id: 'ProfileSettingsForm.displayNamePlaceholder',
         })}
         {...validateMaybe}
-      />
-      <p className={css.extraInfo}>
+      /> */}
+      {/* <p className={css.extraInfo}>
         <FormattedMessage id="ProfileSettingsForm.displayNameInfo" />
-      </p>
+      </p> */}
     </div>
   );
 };
@@ -176,21 +176,6 @@ class ProfileSettingsFormComponent extends Component {
           });
           const lastNameRequired = validators.required(lastNameRequiredMessage);
 
-          // country name custom
-          const countryNameLabel = intl.formatMessage({
-            id: 'ProfileSettingsForm.countryNameLabel',
-          });
-
-          const countryNamePlaceholder = intl.formatMessage({
-            id: 'ProfileSettingsForm.countryNamePlaceholder',
-          });
-
-          const countryNameRequiredMessage = intl.formatMessage({
-            id: 'ProfileSettingsForm.countryNameRequired',
-          });
-
-          const countryNameRequired = validators.required(countryNameRequiredMessage);
-
           // Bio
           const bioLabel = intl.formatMessage({
             id: 'ProfileSettingsForm.bioLabel',
@@ -198,6 +183,35 @@ class ProfileSettingsFormComponent extends Component {
           const bioPlaceholder = intl.formatMessage({
             id: 'ProfileSettingsForm.bioPlaceholder',
           });
+
+          // city name custom
+          const cityNameLabel = intl.formatMessage({
+            id: 'ProfileSettingsForm.cityNameLabel',
+          });
+
+          const cityNamePlaceholder = intl.formatMessage({
+            id: 'ProfileSettingsForm.cityNamePlaceholder',
+          });
+
+          const cityNameRequiredMessage = intl.formatMessage({
+            id: 'ProfileSettingsForm.cityNameRequired',
+          });
+
+          const cityNameRequired = validators.required(cityNameRequiredMessage);
+
+          // zipcode custom
+          const zipcodeLabel = intl.formatMessage({
+            id: 'ProfileSettingsForm.zipcodeLabel',
+          });
+
+          const zipcodePlaceholder = intl.formatMessage({
+            id: 'ProfileSettingsForm.zipcodePlaceholder',
+          });
+
+          const zipcodeRequiredMessage = intl.formatMessage({
+            id: 'ProfileSettingsForm.zipcodeRequired',
+          });
+          const zipcodeRequired = validators.required(zipcodeRequiredMessage);
 
           const uploadingOverlay =
             uploadInProgress || this.state.uploadDelay ? (
@@ -257,7 +271,7 @@ class ProfileSettingsFormComponent extends Component {
             ) : (
               <div className={css.avatarPlaceholder}>
                 <div className={css.avatarPlaceholderText}>
-                  <FormattedMessage id="ProfileSettingsForm.addYourProfilePicture" />
+                  {/* <FormattedMessage id="ProfileSettingsForm.addYourProfilePicture" /> */}
                 </div>
                 <div className={css.avatarPlaceholderTextMobile}>
                   <FormattedMessage id="ProfileSettingsForm.addYourProfilePictureMobile" />
@@ -294,9 +308,9 @@ class ProfileSettingsFormComponent extends Component {
               }}
             >
               <div className={css.sectionContainer}>
-                <H4 as="h2" className={css.sectionTitle}>
+                {/* <H4 as="h2" className={css.sectionTitle}>
                   <FormattedMessage id="ProfileSettingsForm.yourProfilePicture" />
-                </H4>
+                </H4> */}
                 <Field
                   accept={ACCEPT_IMAGES}
                   id="profileImage"
@@ -355,17 +369,17 @@ class ProfileSettingsFormComponent extends Component {
                     );
                   }}
                 </Field>
-                <div className={css.tip}>
+                {/* <div className={css.tip}>
                   <FormattedMessage id="ProfileSettingsForm.tip" />
                 </div>
                 <div className={css.fileInfo}>
                   <FormattedMessage id="ProfileSettingsForm.fileInfo" />
-                </div>
+                </div> */}
               </div>
               <div className={css.sectionContainer}>
-                <H4 as="h2" className={css.sectionTitle}>
+                {/* <H4 as="h2" className={css.sectionTitle}>
                   <FormattedMessage id="ProfileSettingsForm.yourName" />
-                </H4>
+                </H4> */}
                 <div className={css.nameContainer}>
                   <FieldTextInput
                     className={css.firstName}
@@ -390,32 +404,45 @@ class ProfileSettingsFormComponent extends Component {
 
               <DisplayNameMaybe userTypeConfig={userTypeConfig} intl={intl} />
 
-              {/* custom countryInput field */}
-
-              <FieldTextInput
-                className={css.country}
-                type="text"
-                id="country"
-                name="firstname"
-                label={countryNameLabel}
-                placeholder={countryNamePlaceholder}
-                validate={countryNameRequired}
-              />
+              {/* custom cityInput field */}
 
               <div className={classNames(css.sectionContainer)}>
-                <H4 as="h2" className={css.sectionTitle}>
+                {/* <H4 as="h2" className={css.sectionTitle}>
                   <FormattedMessage id="ProfileSettingsForm.bioHeading" />
-                </H4>
+                </H4> */}
                 <FieldTextInput
+                  className={css.bio}
                   type="textarea"
                   id="bio"
                   name="bio"
                   label={bioLabel}
                   placeholder={bioPlaceholder}
                 />
-                <p className={css.extraInfo}>
+                {/* <p className={css.extraInfo}>
                   <FormattedMessage id="ProfileSettingsForm.bioInfo" values={{ marketplaceName }} />
-                </p>
+                </p> */}
+              </div>
+
+              <div className={css.locationContainer}>
+                <FieldTextInput
+                  className={css.city}
+                  type="text"
+                  id="city"
+                  name="city"
+                  label={cityNameLabel}
+                  placeholder={cityNamePlaceholder}
+                  validate={cityNameRequired}
+                />
+
+                <FieldTextInput
+                  className={css.zipcode}
+                  type="text"
+                  id="zipcode"
+                  name="zipcode"
+                  label={zipcodeLabel}
+                  placeholder={zipcodePlaceholder}
+                  validate={zipcodeRequired}
+                />
               </div>
               <div className={classNames(css.sectionContainer, css.lastSection)}>
                 {userFieldProps.map(({ key, ...fieldProps }) => (
@@ -423,15 +450,17 @@ class ProfileSettingsFormComponent extends Component {
                 ))}
               </div>
               {submitError}
-              <Button
-                className={css.submitButton}
-                type="submit"
-                inProgress={submitInProgress}
-                disabled={submitDisabled}
-                ready={pristineSinceLastSubmit}
-              >
-                <FormattedMessage id="ProfileSettingsForm.saveChanges" />
-              </Button>
+              <div className={css.submitButtonContainer}>
+                <Button
+                  className={css.submitButton}
+                  type="submit"
+                  inProgress={submitInProgress}
+                  disabled={submitDisabled}
+                  ready={pristineSinceLastSubmit}
+                >
+                  <FormattedMessage id="ProfileSettingsForm.saveChanges" />
+                </Button>
+              </div>
             </Form>
           );
         }}

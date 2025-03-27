@@ -1141,5 +1141,9 @@
   "ProfileSettingsForm.cityNamePlaceholder": "Enter your city name",
   "ProfileSettingsForm.zipcodeLabel": "Zipcode",
   "ProfileSettingsForm.zipcodePlaceholder": "Enter a zip code",
-  "ProfileSettingsForm.zipcodeRequired": "This zipcode filed is required"
+  "ProfileSettingsForm.zipcodeRequired": "This zipcode filed is required",
+
+  "EditListingDetailsForm.languageLabel": "Language title",
+  "EditListingDetailsForm.languagePlaceholder": "What kind of language is it?",
+  "EditListingDetailsForm.languageRequiredMessage": "You need to add a language."
 }

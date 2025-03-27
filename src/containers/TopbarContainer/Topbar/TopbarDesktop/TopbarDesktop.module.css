@@ -355,6 +355,10 @@
 }
 
 .header {
+  /* border: 1px solid #E5E5E5; */
+
+  /* border: 2px solid red; */
+
   /* height: 101px;
   background-color: rgb(107, 225, 107);
   align-items: center; */
@@ -365,4 +369,13 @@
     height: 60px;
     width: 60px;
   }
+}
+
+.profileMenuLabel{
+  /* background-color: red; */
+  padding: 0px;
+}
+.avatar{
+  height: 60px;
+  width: 60px;
 }

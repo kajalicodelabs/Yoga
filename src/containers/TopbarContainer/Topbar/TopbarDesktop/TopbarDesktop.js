@@ -201,7 +201,6 @@ const TopbarDesktop = props => {
 
   // const isLoggedIn = useSelector((state) => state.auth.isAuthenticated)
   // console.log("isAuthenticated" , isAuthenticated);
-  
 
   // console.log(scrolled, 'scrolled');
   return (
@@ -221,21 +220,23 @@ const TopbarDesktop = props => {
             />
           </div>
           {/* {searchFormMaybe} */}
-          {/* 
+
           <CustomLinksMenu
-        currentPage={currentPage}
-        customLinks={customLinks}
-        intl={intl}
-        hasClientSideContentReady={authenticatedOnClientSide || !isAuthenticatedOrJustHydrated}
-      /> */}
+            currentPage={currentPage}
+            customLinks={customLinks}
+            intl={intl}
+            hasClientSideContentReady={authenticatedOnClientSide || !isAuthenticatedOrJustHydrated}
+          />
 
           {/* {inboxLinkMaybe} */}
           {profileMenuMaybe}
 
-        { isAuthenticated ?  null :  <div>
-            <span className={css.singupButton}>{signupLinkMaybe}</span>
-            <span className={css.loginButton}>{loginLinkMaybe}</span>
-          </div>}
+          {isAuthenticated ? null : (
+            <div>
+              <span className={css.singupButton}>{signupLinkMaybe}</span>
+              <span className={css.loginButton}>{loginLinkMaybe}</span>
+            </div>
+          )}
         </nav>
       </div>
     </div>

@@ -347,6 +347,9 @@ const EditListingDetailsForm = props => (
         }
       );
 
+      const languageRequiredMessage = intl.formatMessage({
+        id: 'EditListingDetailsForm.titleRequired',
+      });
       // Determine the currency to validate:
       // - If editing an existing listing, use the listing's currency.
       // - If creating a new listing, fall back to the default marketplace currency.
@@ -406,6 +409,12 @@ const EditListingDetailsForm = props => (
             />
           )}
 
+          {showCategories && isCompatibleCurrency && (
+            <FieldTextInput
+            id=''
+            />
+)}
+
           {showTitle && isCompatibleCurrency && (
             <FieldTextInput
               id={`${formId}title`}
@@ -418,6 +427,22 @@ const EditListingDetailsForm = props => (
               })}
               maxLength={TITLE_MAX_LENGTH}
               validate={composeValidators(required(titleRequiredMessage), maxLength60Message)}
+              autoFocus={autoFocus}
+            />
+          )}
+
+          {showTitle && isCompatibleCurrency && (
+            <FieldTextInput
+              id={`${formId}language`}
+              name="language"
+              className={css.language}
+              type="text"
+              label={intl.formatMessage({ id: 'EditListingDetailsForm.languageLabel' })}
+              placeholder={intl.formatMessage({
+                id: 'EditListingDetailsForm.languagePlaceholder',
+              })}
+              maxLength={TITLE_MAX_LENGTH}
+              validate={composeValidators(required(languageRequiredMessage), maxLength60Message)}
               autoFocus={autoFocus}
             />
           )}

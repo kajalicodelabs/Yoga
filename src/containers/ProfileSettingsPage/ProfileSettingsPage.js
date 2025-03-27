@@ -86,8 +86,7 @@ export const ProfileSettingsPageComponent = props => {
   const { userFields, userTypes = [] } = config.user;
 
   const handleSubmit = (values, userType) => {
-    const { firstName, lastName, displayName, bio: rawBio, ...rest } = values;
-
+    const { firstName, lastName, displayName, bio: rawBio, city, zipcode, ...rest } = values;
     const displayNameMaybe = displayName
       ? { displayName: displayName.trim() }
       : { displayName: null };
@@ -95,12 +94,16 @@ export const ProfileSettingsPageComponent = props => {
     // Ensure that the optional bio is a string
     const bio = rawBio || '';
 
+    // console.log(values, '---------values');
     const profile = {
       firstName: firstName.trim(),
       lastName: lastName.trim(),
       ...displayNameMaybe,
       bio,
+
       publicData: {
+        city,
+        zipcode,
         ...pickUserFieldsData(rest, 'public', userType, userFields),
       },
       protectedData: {
@@ -129,14 +132,20 @@ export const ProfileSettingsPageComponent = props => {
     // country,
     // state,
     bio,
+    // city,
+    // zipcode,
+    // city,
     publicData,
     protectedData,
     privateData,
   } = user?.attributes.profile;
+
   // I.e. the status is active, not pending-approval or banned
   const isUnauthorizedUser = currentUser && !isUserAuthorized(currentUser);
-  console.log(protectedData, ' ------protected data');
-  const { userType } = publicData || {};
+
+  const { userType, zipcode, city } = publicData;
+
+  // console.log(city, 'city');
   const profileImageId = user.profileImage ? user.profileImage.id : null;
   const profileImage = image || { imageId: profileImageId };
   const userTypeConfig = userTypes.find(config => config.userType === userType);
@@ -153,6 +162,8 @@ export const ProfileSettingsPageComponent = props => {
         lastName,
         ...displayNameMaybe,
         bio,
+        city,
+        zipcode,
         profileImage: user.profileImage,
         ...initialValuesForUserFields(publicData, 'public', userType, userFields),
         ...initialValuesForUserFields(protectedData, 'protected', userType, userFields),

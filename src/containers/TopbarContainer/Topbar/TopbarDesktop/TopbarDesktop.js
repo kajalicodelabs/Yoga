@@ -200,7 +200,7 @@ const TopbarDesktop = props => {
   }, []);
 
   // const isLoggedIn = useSelector((state) => state.auth.isAuthenticated)
-  console.log("isAuthenticated" , isAuthenticated);
+  // console.log("isAuthenticated" , isAuthenticated);
   
 
   // console.log(scrolled, 'scrolled');

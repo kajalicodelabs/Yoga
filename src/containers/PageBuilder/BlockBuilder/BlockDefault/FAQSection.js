@@ -22,7 +22,7 @@ const FAQSection = () => {
     }
   };
 
-  console.log(openIndex, 'openIndex');
+  // console.log(openIndex, 'openIndex');
   return (
     <>
       <div className={css.faqWrapper}>

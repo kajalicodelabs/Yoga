@@ -306,8 +306,46 @@
   /* margin-top: 30px; */
 }
 
-.firstName,
-.lastName,
+.firstName {
+  margin-top: 30px;
+  width: 50%;
+
+  & label {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0px;
+  }
+
+  & input {
+    border: 1px solid #C8C8C8;
+    padding: 9px 14px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+}
+
+.lastName {
+  margin-top: 30px;
+  width: 50%;
+
+  & label {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0px;
+  }
+
+  & input {
+    border: 1px solid #C8C8C8;
+    padding: 9px 14px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+}
+
 .bio,
 .city,
 .zipcode {
@@ -337,6 +375,9 @@
 
 .nameContainer {
   margin-top: 31px;
+  display: flex;
+  gap: 20px;
+  width: 100%;
 }
 
 .submitButtonContainer {

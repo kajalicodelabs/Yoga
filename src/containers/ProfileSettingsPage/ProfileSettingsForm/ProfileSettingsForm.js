@@ -149,7 +149,7 @@ class ProfileSettingsFormComponent extends Component {
             userFields,
             userTypeConfig,
           } = fieldRenderProps;
-
+          // console.log(, ' ----values')
           const user = ensureCurrentUser(currentUser);
 
           // First name

@@ -11,3 +11,16 @@
 .form {
   flex-grow: 1;
 }
+
+
+/* custom css */
+.listingDetailsHeading {
+  color: #388D86;
+  /* font-family: Poppins; */
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 30px;
+}
+.classes{
+  /* background-color: red; */
+}

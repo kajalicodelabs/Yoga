@@ -1143,7 +1143,14 @@
   "ProfileSettingsForm.zipcodePlaceholder": "Enter a zip code",
   "ProfileSettingsForm.zipcodeRequired": "This zipcode filed is required",
 
-  "EditListingDetailsForm.languageLabel": "Language title",
-  "EditListingDetailsForm.languagePlaceholder": "What kind of language is it?",
-  "EditListingDetailsForm.languageRequiredMessage": "You need to add a language."
+  "EditListingDetailsForm.languageLabel": "Languages Spoken",
+  "EditListingDetailsForm.languagePlaceholder": "What kind of Languages is it?",
+  "EditListingDetailsForm.languageRequiredMessage": "You need to add a Languages.",
+  "EditListingDetailsForm.categoriesLabel": "Category",
+  "EditListingDetailsForm.categoriesPlaceholder": "What type of Category is it?",
+  "EditListingDetailsForm.categoriesRequiredMessage": "You need to add a category.",
+  "EditListingDetailsForm.guideNameLabel": "Guide Name",
+  "EditListingDetailsForm.guiideNamePlaceholder": "Guide Name",
+  "EditListingDetailsForm.infoRequiredLabel": "Info required in the description as a perquisite of the session (e.g, intentions, names/places",
+  "EditListingDetailsForm.infoRequiredPlaceholder": "Wtite Description"
 }

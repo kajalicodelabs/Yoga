@@ -246,7 +246,7 @@ const EditListingWizardTab = props => {
     }
     case PHOTOS: {
       return (
-        <EditListingPhotosPanel
+        <EditListinditgPhotosPanel
           {...panelProps(PHOTOS)}
           listingImageConfig={config.layout.listingImage}
           images={images}

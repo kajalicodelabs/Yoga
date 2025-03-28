@@ -102,3 +102,37 @@
     margin-bottom: 40px;
   }
 }
+
+
+/* custom css */
+.tabsContainer {
+  max-width: 1320px;
+  width: 100%;
+  margin: auto;
+
+  .nav {
+    background-color: red;
+    padding: 40px;
+    height: 392px;
+    overflow-x: unset;
+    border-radius: 30px;
+    background: #388D86;
+    box-shadow: 10px 10px 60px 0px #388D861A;
+
+    &>div {
+
+      & a {
+        padding: 0px;
+        padding-bottom: 40px;
+        margin: 0px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        color: #FFFFFF80;
+        background-position: unset !important;
+        background-image: none;
+        border-bottom-color: unset;
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Field, Form as FinalForm } from 'react-final-form';
 import arrayMutators from 'final-form-arrays';
 import classNames from 'classnames';
+import Select from 'react-select';
 
 // Import util modules
 import { FormattedMessage, useIntl } from '../../../../util/reactIntl';
@@ -347,9 +348,14 @@ const EditListingDetailsForm = props => (
         }
       );
 
-      const languageRequiredMessage = intl.formatMessage({
-        id: 'EditListingDetailsForm.titleRequired',
+      const guideNameRequired = intl.formatMessage({
+        id: 'EditListingDetailsForm.guideNameRequired',
       });
+
+      const categoriesRequiredMessage = intl.formatMessage({
+        id: 'EditListingDetailsForm.categoryRequired',
+      });
+
       // Determine the currency to validate:
       // - If editing an existing listing, use the listing's currency.
       // - If creating a new listing, fall back to the default marketplace currency.
@@ -383,6 +389,11 @@ const EditListingDetailsForm = props => (
         !hasMandatoryListingTypeData ||
         !isCompatibleCurrency;
 
+      // const options = [
+      //   { value: 'ddd', label: 'Pick something...' },
+      //   { value: 'first', label: 'First option' },
+      //   { value: 'second', label: 'Second option' },
+      // ];
       return (
         <Form className={classes} onSubmit={handleSubmit}>
           <ErrorMessage fetchErrors={fetchErrors} />
@@ -408,12 +419,19 @@ const EditListingDetailsForm = props => (
               setAllCategoriesChosen={setAllCategoriesChosen}
             />
           )}
+          {/* category */}
+          <FieldSelect id="select" name="select" label="Category">
+            <option value="">Reading</option>
+            <option value="first">Reading First</option>
+            <option value="second">Reading Second</option>
+          </FieldSelect>
 
-          {showCategories && isCompatibleCurrency && (
-            <FieldTextInput
-            id=''
-            />
-)}
+          {/* subCategory  */}
+          <FieldSelect id="select" name="select" label="SubCategory">
+            <option value="">1 Question</option>
+            <option value="">2 Question</option>
+            <option value="">3 Question</option>
+          </FieldSelect>
 
           {showTitle && isCompatibleCurrency && (
             <FieldTextInput
@@ -427,22 +445,6 @@ const EditListingDetailsForm = props => (
               })}
               maxLength={TITLE_MAX_LENGTH}
               validate={composeValidators(required(titleRequiredMessage), maxLength60Message)}
-              autoFocus={autoFocus}
-            />
-          )}
-
-          {showTitle && isCompatibleCurrency && (
-            <FieldTextInput
-              id={`${formId}language`}
-              name="language"
-              className={css.language}
-              type="text"
-              label={intl.formatMessage({ id: 'EditListingDetailsForm.languageLabel' })}
-              placeholder={intl.formatMessage({
-                id: 'EditListingDetailsForm.languagePlaceholder',
-              })}
-              maxLength={TITLE_MAX_LENGTH}
-              validate={composeValidators(required(languageRequiredMessage), maxLength60Message)}
               autoFocus={autoFocus}
             />
           )}
@@ -465,7 +467,19 @@ const EditListingDetailsForm = props => (
             />
           )}
 
-          {showListingFields && isCompatibleCurrency && (
+          {/* Guide name */}
+          {/* "EditListingDetailsForm.guideNameRequired": "Guide name is required" */}
+          <FieldTextInput
+            id="guideName"
+            name="guideName"
+            className={css.guideName}
+            type="textarea"
+            label={intl.formatMessage({ id: 'EditListingDetailsForm.guideNameLabel' })}
+            placeholder={intl.formatMessage({ id: 'EditListingDetailsForm.guiideNamePlaceholder' })}
+            // validate={intl.formatMessage({ id: 'EditListingDetailsForm.guideNameRequired' })}
+          />
+
+          {/* {showListingFields && isCompatibleCurrency && (
             <AddListingFields
               listingType={listingType}
               listingFieldsConfig={listingFieldsConfig}
@@ -482,8 +496,26 @@ const EditListingDetailsForm = props => (
                 values={{ marketplaceName, marketplaceCurrency }}
               />
             </p>
-          )}
+          )} */}
 
+          {/* comunication method */}
+          <FieldSelect id="select" name="select" label="Communication Method">
+            <option value="">Communication method 1</option>
+            <option value="first">Communication method 2</option>
+            <option value="second">Communication method 3</option>
+          </FieldSelect>
+
+          <FieldTextInput
+            id="infoRequired"
+            name="infoRequired"
+            className={css.infoRequired}
+            type="textarea"
+            label={intl.formatMessage({ id: 'EditListingDetailsForm.infoRequiredLabel' })}
+            placeholder={intl.formatMessage({
+              id: 'EditListingDetailsForm.infoRequiredPlaceholder',
+            })}
+            // validate={intl.formatMessage({ id: 'EditListingDetailsForm.infoRequiredRequired' })}
+          />
           <Button
             className={css.submitButton}
             type="submit"

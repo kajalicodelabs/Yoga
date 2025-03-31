@@ -25,6 +25,7 @@ import {
 } from '../../../../components';
 // Import modules from this directory
 import css from './EditListingDetailsForm.module.css';
+import ReactSelectInput from './SelectInput/ReactSelectInput';
 
 const TITLE_MAX_LENGTH = 60;
 
@@ -258,17 +259,17 @@ const AddListingFields = props => {
 
     return isKnownSchemaType && isProviderScope && isTargetListingType && isTargetCategory
       ? [
-          ...pickedFields,
-          <CustomExtendedDataField
-            key={namespacedKey}
-            name={namespacedKey}
-            fieldConfig={fieldConfig}
-            defaultRequiredMessage={intl.formatMessage({
-              id: 'EditListingDetailsForm.defaultRequiredMessage',
-            })}
-            formId={formId}
-          />,
-        ]
+        ...pickedFields,
+        <CustomExtendedDataField
+          key={namespacedKey}
+          name={namespacedKey}
+          fieldConfig={fieldConfig}
+          defaultRequiredMessage={intl.formatMessage({
+            id: 'EditListingDetailsForm.defaultRequiredMessage',
+          })}
+          formId={formId}
+        />,
+      ]
       : pickedFields;
   }, []);
 
@@ -337,7 +338,13 @@ const EditListingDetailsForm = props => (
       const intl = useIntl();
       const { listingType, transactionProcessAlias, unitType } = values;
       const [allCategoriesChosen, setAllCategoriesChosen] = useState(false);
-
+      const [selectedOption, setSelectedOption] = useState(null);
+      const options = [
+        { value: "react", label: "React" },
+        { value: "vue", label: "Vue.js" },
+        { value: "angular", label: "Angular" },
+      ];
+      // done by me 
       const titleRequiredMessage = intl.formatMessage({
         id: 'EditListingDetailsForm.titleRequired',
       });
@@ -420,11 +427,24 @@ const EditListingDetailsForm = props => (
             />
           )}
           {/* category */}
-          <FieldSelect id="select" name="select" label="Category">
+          <ReactSelectInput
+            options={options}
+            value={selectedOption}
+            onChange={setSelectedOption}
+            placeholder="Choose a framework"
+          />
+
+          <ReactSelectInput
+            options={options}
+            value={selectedOption}
+            onChange={setSelectedOption}
+            placeholder="Choose a framework"
+          />
+          {/* <FieldSelect id="select" name="select" label="Category">
             <option value="">Reading</option>
             <option value="first">Reading First</option>
             <option value="second">Reading Second</option>
-          </FieldSelect>
+          </FieldSelect> */}
 
           {/* subCategory  */}
           <FieldSelect id="select" name="select" label="SubCategory">
@@ -476,7 +496,7 @@ const EditListingDetailsForm = props => (
             type="textarea"
             label={intl.formatMessage({ id: 'EditListingDetailsForm.guideNameLabel' })}
             placeholder={intl.formatMessage({ id: 'EditListingDetailsForm.guiideNamePlaceholder' })}
-            // validate={intl.formatMessage({ id: 'EditListingDetailsForm.guideNameRequired' })}
+          // validate={intl.formatMessage({ id: 'EditListingDetailsForm.guideNameRequired' })}
           />
 
           {/* {showListingFields && isCompatibleCurrency && (
@@ -514,7 +534,7 @@ const EditListingDetailsForm = props => (
             placeholder={intl.formatMessage({
               id: 'EditListingDetailsForm.infoRequiredPlaceholder',
             })}
-            // validate={intl.formatMessage({ id: 'EditListingDetailsForm.infoRequiredRequired' })}
+          // validate={intl.formatMessage({ id: 'EditListingDetailsForm.infoRequiredRequired' })}
           />
           <Button
             className={css.submitButton}

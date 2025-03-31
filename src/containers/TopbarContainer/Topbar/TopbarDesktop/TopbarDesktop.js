@@ -233,6 +233,7 @@ const TopbarDesktop = props => {
 
           {isAuthenticated ? null : (
             <div>
+              {/* <h1 className="cursor-hover">hello</h1> */}
               <span className={css.singupButton}>{signupLinkMaybe}</span>
               <span className={css.loginButton}>{loginLinkMaybe}</span>
             </div>

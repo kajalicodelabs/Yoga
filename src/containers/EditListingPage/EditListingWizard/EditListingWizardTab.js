@@ -180,7 +180,8 @@ const EditListingWizardTab = props => {
       },
     };
   };
-
+  // clg command
+console.log(tab, "---------tabs")
   // TODO: add missing cases for supported tabs
   switch (tab) {
     case DETAILS: {

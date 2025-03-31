@@ -30,6 +30,7 @@ import Routes from './routing/Routes';
 
 // Sharetribe Web Template uses English translations as default translations.
 import defaultMessages from './translations/en.json';
+import CustomCursor from './components/CursorEffect/CustomCursor';
 
 // If you want to change the language of default (fallback) translations,
 // change the imports to match the wanted locale:
@@ -255,6 +256,7 @@ export const ClientApp = props => {
               <Routes logLoadDataCalls={logLoadDataCalls} />
             </BrowserRouter>
           </HelmetProvider>
+          <CustomCursor/>
         </Provider>
       </IntlProvider>
     </Configurations>
@@ -287,6 +289,7 @@ export const ServerApp = props => {
         textComponent="span"
       >
         <Provider store={store}>
+          {/* <CustomCursor/> */}
           <HelmetProvider context={helmetContext}>
             <IncludeScripts config={appConfig} />
             <StaticRouter location={url} context={context}>

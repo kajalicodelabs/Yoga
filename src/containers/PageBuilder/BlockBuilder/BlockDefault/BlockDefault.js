@@ -122,8 +122,9 @@ const BlockDefault = props => {
                 css.text
               )}
             >
-              <Field data={title} options={options} />
+              <Field className="cursor-hover" data={title} options={options} />
               <Field data={text} options={options} />
+              {/* <h1 className="cursor-hover" >hhhh</h1> */}
               {/* <Field data={callToAction} className={ctaButtonClass} options={options} /> */}
             </div>
           ) : null}

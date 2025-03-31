@@ -1539,3 +1539,20 @@ textarea {
     margin-top: 32px;
   }
 }
+
+
+.customCursor{
+  background-color: red !important;
+
+}
+
+.cursor-hover:hover .customCursor {
+  background-color: #239954 !important;
+  width: 100px;
+  height: 100px;
+}
+
+body {
+  cursor: none;
+}
+

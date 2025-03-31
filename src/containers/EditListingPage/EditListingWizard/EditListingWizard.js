@@ -646,6 +646,7 @@ class EditListingWizard extends Component {
               isPriceDisabled,
               processName
             );
+            console.log(tab, "------tabs")
             return (
               <EditListingWizardTab
                 {...rest}

@@ -11,7 +11,13 @@ import { formatMoney } from '../../../../util/currency';
 import { types as sdkTypes } from '../../../../util/sdkLoader';
 
 // Import shared components
-import { Button, Form, FieldCurrencyInput, FieldTextInput } from '../../../../components';
+import {
+  Button,
+  Form,
+  FieldCurrencyInput,
+  FieldTextInput,
+  FieldSelect,
+} from '../../../../components';
 
 // Import modules from this directory
 import css from './EditListingPricingForm.module.css';
@@ -108,6 +114,14 @@ export const EditListingPricingForm = props => (
               <FormattedMessage id="EditListingPricingForm.showListingFailed" />
             </p>
           ) : null}
+
+          <FieldSelect id="priceDuration" name="priceDuration" label="Duration">
+            <option value="10 Min">10 Min</option>
+            <option value="20 Min">20 Min</option>
+            <option value="30 Min">30 Min</option>
+            <option value="40 Min">40 Min</option>
+          </FieldSelect>
+
           <FieldCurrencyInput
             id={`${formId}price`}
             name="price"

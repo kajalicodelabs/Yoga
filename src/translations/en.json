@@ -189,7 +189,7 @@
   "EditListingAvailabilityPanel.WeeklyCalendar.scheduleTitle": "Schedule for",
   "EditListingAvailabilityPanel.WeeklyCalendar.seats": "{seats, plural, one {{seats} seat} other {{seats} seats}}",
   "EditListingAvailabilityPanel.addException": "Add an availability exception",
-  "EditListingAvailabilityPanel.availabilityPlanInfo": "When is this listing available for booking? Start by setting a default weekly schedule. After that you can adjust the availability for specific dates.",
+  "EditListingAvailabilityPanel.availabilityPlanInfo": "By default, Munay checks your connected calendar(s) for availability when customers book with you.You can adjust availability using your default schedule, custom hours, and date-specific hours. On the Availability page, set your regular available hours. Updates to this schedule sync automatically with your event types. This schedule defines your overall availability in Munay.",
   "EditListingAvailabilityPanel.createListingTitle": "Availability",
   "EditListingAvailabilityPanel.editAvailabilityPlan": "Edit default schedule",
   "EditListingAvailabilityPanel.exceptionAvailable": "Available",
@@ -1154,5 +1154,4 @@
   "EditListingDetailsForm.guideNameRequired": "GuideName field is required",
   "EditListingDetailsForm.infoRequiredLabel": "Info required in the description as a perquisite of the session (e.g, intentions, names/places",
   "EditListingDetailsForm.infoRequiredPlaceholder": "Wtite Description"
-
 }

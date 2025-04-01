@@ -522,7 +522,7 @@ class EditListingWizard extends Component {
     // For oudated draft listing, we don't show other tabs but the "details"
     const tabs =
       isNewListingFlow && (invalidExistingListingType || !hasListingTypeSelected)
-        ? TABS_DETAILS_ONLY
+        ? TABS_DEETAILS_ONLY
         : isBookingProcess(processName)
         ? tabsForBookingProcess(TABS_BOOKING, listingTypeConfig)
         : isPurchaseProcess(processName)
@@ -631,6 +631,7 @@ class EditListingWizard extends Component {
       return <NamedRedirect name="EditListingPage" params={pathParams} />;
     }
 
+    console.log(tabs, '<<<<tabs');
     return (
       <div className={classes}>
         <Tabs

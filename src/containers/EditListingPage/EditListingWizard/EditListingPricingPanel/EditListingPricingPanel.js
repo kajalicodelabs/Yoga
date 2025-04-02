@@ -70,6 +70,7 @@ const EditListingPricingPanel = props => {
   const isPublished = listing?.id && listing?.attributes?.state !== LISTING_STATE_DRAFT;
 
   const publicData = listing?.attributes?.publicData;
+  console.log(publicData,'--pubdata')
   const listingTypeConfig = getListingTypeConfig(publicData, listingTypes);
   const transactionProcessAlias = listingTypeConfig.transactionType.alias;
 
@@ -104,18 +105,34 @@ const EditListingPricingPanel = props => {
         <EditListingPricingForm
           className={css.form}
           initialValues={initialValues}
+
           onSubmit={values => {
             const { price, priceDuration } = values;
-
             console.log(values, '<<<<values');
             // New values for listing attributes
             const updateValues = {
               price,
-              priceDuration,
+              publicData: {
+                priceDuration,
+              }
             };
             onSubmit(updateValues);
             console.log(updateValues, '<<<<updateValues');
           }}
+
+
+          // onSubmit={values => {
+          //   const { price, priceDuration } = values;
+
+          //   console.log(values, '<<<<values');
+          //   // New values for listing attributes
+          //   const updateValues = {
+          //     price,
+          //     priceDuration,
+          //   };
+          //   onSubmit(updateValues);
+          //   console.log(updateValues, '<<<<updateValues');
+          // }}
           marketplaceCurrency={marketplaceCurrency}
           unitType={unitType}
           listingMinimumPriceSubUnits={listingMinimumPriceSubUnits}

@@ -116,10 +116,10 @@ export const EditListingPricingForm = props => (
           ) : null}
 
           <FieldSelect id="priceDuration" name="priceDuration" label="Duration">
-            <option value="10 minutes">10 minutes</option>
-            <option value="20 minutes">20 minutes</option>
-            <option value="30 minutes">30 minutes</option>
-            <option value="40 minutes">40 minutes</option>
+            <option value="10_minutes">10 minutes</option>
+            <option value="20_minutes">20 minutes</option>
+            <option value="30_minutes">30 minutes</option>
+            <option value="40_minutes">40 minutes</option>
           </FieldSelect>
 
           <FieldCurrencyInput

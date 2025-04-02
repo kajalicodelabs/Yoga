@@ -52,6 +52,7 @@
     "react-router-dom": "^5.3.4",
     "react-select": "^5.10.1",
     "react-slick": "^0.30.3",
+    "recharts": "^2.15.1",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
     "rehype-react": "^6.2.1",

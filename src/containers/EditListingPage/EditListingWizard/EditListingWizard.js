@@ -69,8 +69,8 @@ import css from './EditListingWizard.module.css';
 
 const TABS_DETAILS_ONLY = [DETAILS];
 const TABS_PRODUCT = [DETAILS, PRICING_AND_STOCK, DELIVERY, PHOTOS];
-const TABS_BOOKING = [DETAILS, LOCATION, PRICING, AVAILABILITY, PHOTOS];
-const TABS_INQUIRY = [DETAILS, LOCATION, PRICING, PHOTOS];
+const TABS_BOOKING = [DETAILS, PRICING, AVAILABILITY, PHOTOS];
+const TABS_INQUIRY = [DETAILS, PRICING, PHOTOS];
 const TABS_ALL = [...TABS_PRODUCT, ...TABS_BOOKING, ...TABS_INQUIRY];
 
 // Tabs are horizontal in small screens
@@ -522,7 +522,7 @@ class EditListingWizard extends Component {
     // For oudated draft listing, we don't show other tabs but the "details"
     const tabs =
       isNewListingFlow && (invalidExistingListingType || !hasListingTypeSelected)
-        ? TABS_DETAILS_ONLY
+        ? TABS_DEETAILS_ONLY
         : isBookingProcess(processName)
         ? tabsForBookingProcess(TABS_BOOKING, listingTypeConfig)
         : isPurchaseProcess(processName)
@@ -631,6 +631,7 @@ class EditListingWizard extends Component {
       return <NamedRedirect name="EditListingPage" params={pathParams} />;
     }
 
+    console.log(tabs, '<<<<tabs');
     return (
       <div className={classes}>
         <Tabs

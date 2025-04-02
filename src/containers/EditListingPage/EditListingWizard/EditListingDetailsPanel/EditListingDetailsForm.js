@@ -396,15 +396,54 @@ const EditListingDetailsForm = props => (
         !hasMandatoryListingTypeData ||
         !isCompatibleCurrency;
 
-      // const options = [
-      //   { value: 'ddd', label: 'Pick something...' },
-      //   { value: 'first', label: 'First option' },
-      //   { value: 'second', label: 'Second option' },
-      // ];
+      const colourOptions = [
+        { value: 'ddd', label: 'Pick something...' },
+        { value: 'first', label: 'First option' },
+        { value: 'second', label: 'Second option' },
+      ];
+
+      // onSubmit={e => {
+      //     e.preventDefault();
+      //     console.log('submit');
+
+      //     console.log(formApi);
+      //     const formState = formApi.getState().values;
+      //     console.log('formstate >> ', formState);
+
+      // }}
+
       return (
-        <Form className={classes} onSubmit={handleSubmit}>
+        <Form
+          className={classes}
+          onSubmit={handleSubmit}
+          //   <Form className={classes}
+          //     onSubmit={e => {
+          //     e.preventDefault();
+          //     console.log('submit');
+
+          //     console.log(formApi);
+          //     const formState = formApi.getState().values;
+          //     console.log('formstate >> ', formState);
+
+          // }}
+        >
           <ErrorMessage fetchErrors={fetchErrors} />
 
+          {/* language input */}
+          <label>Language Spoken</label>
+          <Select
+            id="languages"
+            defaultValue={[colourOptions[2], colourOptions[3]]}
+            isMulti
+            name="languages"
+            options={colourOptions}
+            className="basic-multi-select"
+            classNamePrefix="select"
+            onChange={selectedOption => {
+              console.log('changing', selectedOption);
+              formApi.change('languages', selectedOption);
+            }}
+          />
           <FieldSelectListingType
             name="listingType"
             listingTypes={selectableListingTypes}
@@ -427,27 +466,14 @@ const EditListingDetailsForm = props => (
             />
           )}
           {/* category */}
-          <ReactSelectInput
-            options={options}
-            value={selectedOption}
-            onChange={setSelectedOption}
-            placeholder="Choose a framework"
-          />
-
-          <ReactSelectInput
-            options={options}
-            value={selectedOption}
-            onChange={setSelectedOption}
-            placeholder="Choose a framework"
-          />
-          {/* <FieldSelect id="select" name="select" label="Category">
+          <FieldSelect id="categoryDetail" name="categoryDetail" label="Category">
             <option value="">Reading</option>
             <option value="first">Reading First</option>
             <option value="second">Reading Second</option>
           </FieldSelect> */}
 
           {/* subCategory  */}
-          <FieldSelect id="select" name="select" label="SubCategory">
+          <FieldSelect id="subCategories" name="subCategories" label="SubCategory">
             <option value="">1 Question</option>
             <option value="">2 Question</option>
             <option value="">3 Question</option>
@@ -519,7 +545,11 @@ const EditListingDetailsForm = props => (
           )} */}
 
           {/* comunication method */}
-          <FieldSelect id="select" name="select" label="Communication Method">
+          <FieldSelect
+            id="communicationMethod"
+            name="communicationMethod"
+            label="Communication Method"
+          >
             <option value="">Communication method 1</option>
             <option value="first">Communication method 2</option>
             <option value="second">Communication method 3</option>

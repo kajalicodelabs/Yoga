@@ -221,15 +221,27 @@ const getInitialValues = (
   categoryKey
 ) => {
   const { description, title, publicData, privateData } = props?.listing?.attributes || {};
-  const { listingType, language, categories } = publicData;
+  const {
+    listingType,
+    languages,
+    categoryDetail,
+    guideName,
+    infoRequired,
+    subCategories,
+    communicationMethod,
+  } = publicData;
 
   const nestedCategories = pickCategoryFields(publicData, categoryKey, 1, listingCategories);
   // Initial values for the form
   return {
     title,
     description,
-    language,
-    categories,
+    languages,
+    categoryDetail,
+    guideName,
+    infoRequired,
+    subCategories,
+    communicationMethod,
     ...nestedCategories,
     // Transaction type info: listingType, transactionProcessAlias, unitType
     ...getTransactionInfo(listingTypes, existingListingTypeInfo),
@@ -288,7 +300,7 @@ const EditListingDetailsPanel = props => {
   const classes = classNames(rootClassName || css.root, className);
   const { publicData, state } = listing?.attributes || {};
   // console.log(publicData, 'pub>>>>>>')
-  const { language, categories } = publicData;
+  const { languages, categoryDetail } = publicData;
 
   const listingTypes = config.listing.listingTypes;
   const listingFields = config.listing.listingFields;
@@ -311,8 +323,11 @@ const EditListingDetailsPanel = props => {
     listingFields,
     listingCategories,
     categoryKey,
-    language,
-    categories
+    languages,
+    categoryDetail
+    // subCategories,
+    // infoRequired,
+    // guideName
   );
 
   const noListingTypesSet = listingTypes?.length === 0;
@@ -331,7 +346,6 @@ const EditListingDetailsPanel = props => {
           />
         ) : (
           <FormattedMessage
-
             id="EditListingDetailsPanel.createListingTitle"
             values={{ lineBreak: <br /> }}
           />
@@ -345,18 +359,21 @@ const EditListingDetailsPanel = props => {
           saveActionMsg={submitButtonText}
           onSubmit={values => {
             const {
+              languages,
               title,
               description,
-              category,
-              language,
-              categories,
+              categoryDetail,
+              subCategories,
+              guideName,
+              infoRequired,
               listingType,
+              communicationMethod,
               transactionProcessAlias,
               unitType,
               ...rest
             } = values;
 
-            // console.log(values, "--------values")
+            console.log(values, '--------values');
             const nestedCategories = pickCategoryFields(rest, categoryKey, 1, listingCategories);
             // Remove old categories by explicitly saving null for them.
             const cleanedNestedCategories = {
@@ -386,8 +403,12 @@ const EditListingDetailsPanel = props => {
               description,
               publicData: {
                 listingType,
-                language,
-                categories,
+                languages,
+                categoryDetail,
+                guideName,
+                infoRequired,
+                subCategories,
+                communicationMethod,
                 transactionProcessAlias,
                 unitType,
                 ...cleanedNestedCategories,

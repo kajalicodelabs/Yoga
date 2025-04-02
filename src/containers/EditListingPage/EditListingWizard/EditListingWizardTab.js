@@ -247,7 +247,7 @@ console.log(tab, "---------tabs")
     }
     case PHOTOS: {
       return (
-        <EditListinditgPhotosPanel
+        <EditListingPhotosPanel
           {...panelProps(PHOTOS)}
           listingImageConfig={config.layout.listingImage}
           images={images}
